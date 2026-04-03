@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: fleche-pret-pro
+    env: docker
+    plan: free # Vous pouvez changer pour un plan payant si nécessaire
+    region: ohio # Ou une autre région de Render
+    dockerContext: .
+    dockerfilePath: Dockerfile
+    healthCheckPath: /
