@@ -1,956 +1,2666 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flèche Prêt Pro — Promotion -20% sur vos Remboursements</title>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root {
-  --red:#E53E1E; --red-dark:#B91C08; --red-light:#FF6B45; --red-bg:#FFF1ED;
-  --orange:#F97316; --orange-light:#FED7AA;
-  --dark:#1A1A2E; --dark2:#16213E;
-  --text:#2D2D2D; --text-muted:#6B7280;
-  --white:#FFFFFF; --gray-light:#F8F9FA; --gray-border:#E5E7EB;
-  --gold:#F59E0B; --green:#10B981; --blue:#3B82F6;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);line-height:1.6;}
-h1,h2,h3,h4{font-family:'Sora',sans-serif;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flèche Prêt Pro — Promotion -20% sur vos Remboursements</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --red: #E53E1E;
+      --red-dark: #B91C08;
+      --red-light: #FF6B45;
+      --red-bg: #FFF1ED;
+      --orange: #F97316;
+      --orange-light: #FED7AA;
+      --dark: #1A1A2E;
+      --dark2: #16213E;
+      --text: #2D2D2D;
+      --text-muted: #6B7280;
+      --white: #FFFFFF;
+      --gray-light: #F8F9FA;
+      --gray-border: #E5E7EB;
+      --gold: #F59E0B;
+      --green: #10B981;
+      --blue: #3B82F6;
+    }
 
-/* NAV */
-nav{background:var(--dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:70px;position:sticky;top:0;z-index:200;box-shadow:0 2px 20px rgba(0,0,0,0.3);}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
-.logo-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--red),var(--orange));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;color:white;font-weight:800;font-family:'Sora',sans-serif;}
-.logo-text{color:white;font-family:'Sora',sans-serif;font-weight:700;font-size:1.1rem;}
-.logo-text span{color:var(--red-light);}
-.nav-links{display:flex;gap:1.5rem;list-style:none;}
-.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:13px;font-weight:500;transition:color 0.2s;}
-.nav-links a:hover{color:var(--red-light);}
-.nav-cta{background:linear-gradient(135deg,var(--red),var(--orange));color:white!important;padding:8px 18px;border-radius:8px;font-weight:600!important;}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* STICKY BOTTOM CTA */
-.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:199;background:linear-gradient(135deg,var(--dark),var(--dark2));border-top:2px solid var(--red);padding:12px 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;transform:translateY(100%);transition:transform 0.4s ease;flex-wrap:wrap;}
-.sticky-cta.visible{transform:translateY(0);}
-.sticky-cta p{color:white;font-size:14px;}
-.sticky-cta p strong{color:var(--red-light);}
-.sticky-cta a{background:linear-gradient(135deg,var(--red),var(--orange));color:white;padding:10px 24px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* HERO */
-.hero{background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 60%,#0F3460 100%);color:white;padding:80px 2rem 100px;text-align:center;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(229,62,30,0.2) 0%,transparent 70%);}
-.hero::after{content:'';position:absolute;bottom:-80px;left:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,0.15) 0%,transparent 70%);}
-.promo-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(229,62,30,0.2);border:1px solid var(--red-light);color:var(--red-light);padding:8px 20px;border-radius:100px;font-size:13px;font-weight:600;margin-bottom:1.5rem;letter-spacing:1px;text-transform:uppercase;animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(229,62,30,0.3);}50%{box-shadow:0 0 0 8px rgba(229,62,30,0);}}
-.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.2;margin-bottom:1rem;max-width:800px;margin-left:auto;margin-right:auto;}
-.hero h1 .highlight{background:linear-gradient(135deg,var(--red-light),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.hero p{font-size:1.1rem;color:rgba(255,255,255,0.7);max-width:550px;margin:0 auto 2.5rem;}
-.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--red),var(--orange));color:white;padding:14px 32px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;font-family:'Sora',sans-serif;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 20px rgba(229,62,30,0.4);}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(229,62,30,0.5);}
-.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);color:white;padding:14px 32px;border-radius:10px;font-weight:600;font-size:1rem;text-decoration:none;font-family:'Sora',sans-serif;transition:background 0.2s;}
-.btn-secondary:hover{background:rgba(255,255,255,0.2);}
-.hero-stats{display:flex;gap:3rem;justify-content:center;margin-top:4rem;flex-wrap:wrap;position:relative;z-index:1;}
-.stat-item{text-align:center;}
-.stat-value{font-size:2rem;font-weight:800;font-family:'Sora',sans-serif;background:linear-gradient(135deg,var(--red-light),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.stat-label{font-size:13px;color:rgba(255,255,255,0.6);margin-top:4px;}
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
 
-/* COUNTDOWN */
-.countdown-section{background:linear-gradient(135deg,var(--red),var(--red-dark));color:white;padding:2.5rem 2rem;text-align:center;}
-.countdown-title{font-size:1rem;font-weight:600;margin-bottom:1rem;opacity:0.9;text-transform:uppercase;letter-spacing:1px;}
-.countdown-boxes{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-.cd-box{background:rgba(0,0,0,0.25);border-radius:12px;padding:1rem 1.5rem;min-width:90px;}
-.cd-num{font-size:2.5rem;font-weight:800;font-family:'Sora',sans-serif;line-height:1;}
-.cd-label{font-size:11px;opacity:0.7;text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
-.cd-sep{font-size:2rem;font-weight:800;align-self:center;opacity:0.5;}
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Sora', sans-serif;
+    }
 
-/* LIVE COUNTER */
-.live-counter{background:var(--dark);padding:2rem;display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;}
-.live-item{text-align:center;color:white;}
-.live-num{font-size:1.8rem;font-weight:800;font-family:'Sora',sans-serif;background:linear-gradient(135deg,var(--red-light),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.live-label{font-size:12px;color:rgba(255,255,255,0.5);margin-top:2px;}
-.live-dot{display:inline-block;width:8px;height:8px;background:var(--green);border-radius:50%;margin-right:6px;animation:blink 1s infinite;}
-@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+    /* NAV */
+    nav {
+      background: var(--dark);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    }
 
-/* SECTIONS */
-section{padding:5rem 2rem;}
-.container{max-width:1100px;margin:0 auto;}
-.section-label{display:inline-block;color:var(--red);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.75rem;}
-.section-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;margin-bottom:1rem;color:var(--dark);}
-.section-sub{font-size:1rem;color:var(--text-muted);max-width:550px;}
-.section-header{margin-bottom:3rem;}
-.section-center{text-align:center;}
-.section-center .section-sub{margin:0 auto;}
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
 
-/* DIVIDER */
-.divider{display:flex;align-items:center;gap:0.5rem;margin:0 auto 3rem;max-width:100px;}
-.divider span{display:block;height:3px;border-radius:3px;}
-.divider .d1{flex:1;background:var(--red);}
-.divider .d2{width:8px;height:8px;background:var(--orange);border-radius:50%;}
-.divider .d3{flex:1;background:var(--red);}
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--red), var(--orange));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: white;
+      font-weight: 800;
+      font-family: 'Sora', sans-serif;
+    }
 
-/* PROMO BANNER */
-.promo-banner{background:linear-gradient(135deg,var(--red),var(--red-dark));color:white;padding:3rem 2rem;text-align:center;}
-.promo-container{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap;}
-.promo-percent{font-size:6rem;font-weight:800;font-family:'Sora',sans-serif;line-height:1;text-shadow:0 4px 20px rgba(0,0,0,0.2);}
-.promo-details{text-align:left;}
-.promo-details h2{font-size:1.8rem;font-weight:700;margin-bottom:0.5rem;}
-.promo-details p{font-size:1rem;opacity:0.9;max-width:400px;line-height:1.6;}
-.promo-timer{background:rgba(0,0,0,0.2);border-radius:12px;padding:1rem 1.5rem;margin-top:1rem;font-size:13px;opacity:0.9;}
+    .logo-text {
+      color: white;
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
 
-/* STEPS */
-.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;}
-.step-card{background:var(--white);border:1px solid var(--gray-border);border-radius:16px;padding:1.75rem;position:relative;transition:transform 0.2s,box-shadow 0.2s;}
-.step-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08);}
-.step-num{width:44px;height:44px;background:linear-gradient(135deg,var(--red),var(--orange));border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:1.1rem;font-family:'Sora',sans-serif;margin-bottom:1rem;}
-.step-card h3{font-size:1rem;font-weight:700;margin-bottom:0.5rem;color:var(--dark);}
-.step-card p{font-size:13px;color:var(--text-muted);line-height:1.6;}
+    .logo-text span {
+      color: var(--red-light);
+    }
 
-/* SIMULATOR */
-.sim-bg{background:var(--gray-light);}
-.simulator{background:var(--white);border-radius:24px;border:1px solid var(--gray-border);padding:2.5rem;max-width:800px;margin:0 auto;box-shadow:0 8px 40px rgba(0,0,0,0.06);}
-.sim-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
-.sim-label{font-size:13px;font-weight:600;color:var(--text-muted);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.5px;}
-.sim-input{width:100%;padding:12px 16px;border:1.5px solid var(--gray-border);border-radius:10px;font-size:1rem;font-family:'DM Sans',sans-serif;color:var(--dark);outline:none;transition:border-color 0.2s;}
-.sim-input:focus{border-color:var(--red);}
-.sim-select{width:100%;padding:12px 16px;border:1.5px solid var(--gray-border);border-radius:10px;font-size:1rem;font-family:'DM Sans',sans-serif;color:var(--dark);outline:none;background:white;}
-.sim-results{margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.sim-res-card{border-radius:14px;padding:1.25rem;text-align:center;}
-.sim-res-card.before{background:#FEF2F2;border:1px solid #FECACA;}
-.sim-res-card.after{background:#F0FDF4;border:1px solid #86EFAC;}
-.sim-res-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.5rem;}
-.sim-res-card.before .sim-res-label{color:#DC2626;}
-.sim-res-card.after .sim-res-label{color:#16A34A;}
-.sim-res-amount{font-size:1.8rem;font-weight:800;font-family:'Sora',sans-serif;}
-.sim-res-card.before .sim-res-amount{color:#DC2626;}
-.sim-res-card.after .sim-res-amount{color:#16A34A;}
-.sim-economy{background:linear-gradient(135deg,#FEF9C3,#FEF08A);border-radius:12px;padding:1rem;text-align:center;margin-top:1rem;border:1px solid #FCD34D;}
-.sim-economy p{font-size:14px;color:#92400E;font-weight:600;}
-.sim-economy strong{font-size:1.2rem;color:#78350F;}
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
 
-/* FEATURES */
-.features-bg{background:var(--gray-light);}
-.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
-.feature-card{background:var(--white);border-radius:16px;padding:2rem;border:1px solid var(--gray-border);}
-.feature-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:1.25rem;}
-.feature-card h3{font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;color:var(--dark);}
-.feature-card p{font-size:14px;color:var(--text-muted);line-height:1.6;}
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
 
-/* COMPARATIF */
-.comp-table{width:100%;border-collapse:collapse;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);}
-.comp-table thead{background:var(--dark);color:white;}
-.comp-table th{padding:1rem 1.25rem;text-align:center;font-size:14px;font-weight:700;}
-.comp-table th:first-child{text-align:left;}
-.comp-table td{padding:1rem 1.25rem;border-bottom:1px solid var(--gray-border);font-size:14px;text-align:center;}
-.comp-table td:first-child{text-align:left;font-weight:600;color:var(--dark);}
-.comp-table tr:last-child td{border-bottom:none;}
-.comp-table tr:nth-child(even){background:var(--gray-light);}
-.comp-table .yes{color:var(--green);font-size:18px;}
-.comp-table .no{color:#EF4444;font-size:18px;}
-.comp-table .ok{color:var(--gold);font-size:18px;}
-.comp-highlight td{background:linear-gradient(135deg,#FFF1ED,#FFF9F7)!important;}
-.comp-highlight td:first-child{border-left:3px solid var(--red);}
+    .nav-links a:hover {
+      color: var(--red-light);
+    }
 
-/* TARIFS */
-.tarifs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;}
-.tarif-card{border:1px solid var(--gray-border);border-radius:20px;padding:2rem;text-align:center;position:relative;overflow:hidden;background:var(--white);transition:transform 0.2s;}
-.tarif-card:hover{transform:translateY(-4px);}
-.tarif-card.featured{border-color:var(--red);border-width:2px;}
-.featured-badge{position:absolute;top:16px;right:-25px;background:linear-gradient(135deg,var(--red),var(--orange));color:white;font-size:11px;font-weight:700;padding:4px 32px;transform:rotate(35deg);letter-spacing:1px;}
-.tarif-range{font-size:13px;color:var(--text-muted);margin-bottom:0.5rem;font-weight:500;}
-.tarif-amount{font-size:2.5rem;font-weight:800;font-family:'Sora',sans-serif;color:var(--dark);line-height:1;margin-bottom:0.25rem;}
-.tarif-unit{font-size:14px;color:var(--text-muted);margin-bottom:1.5rem;}
-.tarif-rate{display:inline-block;background:var(--red-bg);color:var(--red);border-radius:100px;padding:6px 16px;font-size:13px;font-weight:700;margin-bottom:1.5rem;}
-.tarif-promo{background:linear-gradient(135deg,var(--red-bg),#FFF9ED);border:1px dashed var(--red);border-radius:10px;padding:10px;font-size:13px;color:var(--red-dark);font-weight:600;}
+    .nav-cta {
+      background: linear-gradient(135deg, var(--red), var(--orange));
+      color: white !important;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 600 !important;
+    }
 
-/* USECASES */
-.usecases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;}
-.usecase-card{background:var(--white);border:1px solid var(--gray-border);border-radius:16px;padding:1.5rem;text-align:center;transition:transform 0.2s,border-color 0.2s;}
-.usecase-card:hover{transform:translateY(-3px);border-color:var(--red);}
-.usecase-icon{font-size:2.5rem;margin-bottom:0.75rem;}
-.usecase-card h4{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:0.4rem;}
-.usecase-card p{font-size:12px;color:var(--text-muted);line-height:1.5;}
+    /* STICKY BOTTOM CTA */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 199;
+      background: linear-gradient(135deg, var(--dark), var(--dark2));
+      border-top: 2px solid var(--red);
+      padding: 12px 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+      flex-wrap: wrap;
+    }
 
-/* ENGAGEMENTS */
-.engage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;}
-.engage-card{background:var(--dark);border-radius:16px;padding:2rem;color:white;position:relative;overflow:hidden;}
-.engage-card::before{content:'';position:absolute;top:-30px;right:-30px;width:100px;height:100px;border-radius:50%;background:rgba(229,62,30,0.15);}
-.engage-num{font-size:3rem;font-weight:800;font-family:'Sora',sans-serif;color:rgba(229,62,30,0.3);line-height:1;margin-bottom:0.5rem;}
-.engage-card h3{font-size:1rem;font-weight:700;margin-bottom:0.5rem;}
-.engage-card p{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.6;}
+    .sticky-cta.visible {
+      transform: translateY(0);
+    }
 
-/* TIMELINE */
-.timeline{position:relative;max-width:700px;margin:0 auto;}
-.timeline::before{content:'';position:absolute;left:24px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--red),var(--orange));border-radius:2px;}
-.tl-item{display:flex;gap:1.5rem;margin-bottom:2rem;position:relative;}
-.tl-dot{width:50px;height:50px;background:linear-gradient(135deg,var(--red),var(--orange));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;z-index:1;}
-.tl-content{background:var(--white);border:1px solid var(--gray-border);border-radius:12px;padding:1.25rem;flex:1;}
-.tl-year{font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.25rem;}
-.tl-content h4{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:0.25rem;}
-.tl-content p{font-size:13px;color:var(--text-muted);}
+    .sticky-cta p {
+      color: white;
+      font-size: 14px;
+    }
 
-/* TESTIMONIALS */
-.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
-.testi-card{background:var(--white);border:1px solid var(--gray-border);border-radius:16px;padding:1.75rem;position:relative;}
-.testi-card::before{content:'"';font-size:5rem;font-family:'Sora',sans-serif;color:var(--red-bg);position:absolute;top:-10px;left:16px;line-height:1;font-weight:800;}
-.stars{color:var(--gold);font-size:1rem;margin-bottom:0.75rem;}
-.testi-text{font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;font-style:italic;}
-.testi-author{display:flex;align-items:center;gap:0.75rem;}
-.testi-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;font-family:'Sora',sans-serif;color:white;flex-shrink:0;}
-.testi-name{font-size:14px;font-weight:700;color:var(--dark);}
-.testi-city{font-size:12px;color:var(--text-muted);}
-.testi-badge{display:inline-block;background:var(--red-bg);color:var(--red);font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;margin-top:2px;}
+    .sticky-cta p strong {
+      color: var(--red-light);
+    }
 
-/* ELIGIBILITE */
-.eligib-bg{background:var(--dark);color:white;}
-.eligib-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;}
-.eligib-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:1.75rem;text-align:center;}
-.eligib-icon{font-size:2.5rem;margin-bottom:1rem;}
-.eligib-card h3{font-size:15px;font-weight:700;margin-bottom:0.5rem;color:white;}
-.eligib-card p{font-size:13px;color:rgba(255,255,255,0.6);}
+    .sticky-cta a {
+      background: linear-gradient(135deg, var(--red), var(--orange));
+      color: white;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
 
-/* SECURITE */
-.secu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;}
-.secu-card{border-radius:16px;padding:2rem;border:1px solid var(--gray-border);}
-.secu-icon-wrap{width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:1.25rem;}
-.secu-card h3{font-size:1rem;font-weight:700;margin-bottom:0.5rem;color:var(--dark);}
-.secu-card p{font-size:13px;color:var(--text-muted);line-height:1.6;}
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark2) 60%, #0F3460 100%);
+      color: white;
+      padding: 80px 2rem 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-/* INSCRIPTION */
-.inscription-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
-.inscription-steps{display:flex;flex-direction:column;gap:1.25rem;}
-.insc-step{display:flex;gap:1rem;align-items:flex-start;}
-.insc-dot{width:32px;height:32px;background:linear-gradient(135deg,var(--red),var(--orange));border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:13px;flex-shrink:0;margin-top:2px;}
-.insc-content h4{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:2px;}
-.insc-content p{font-size:13px;color:var(--text-muted);}
-.app-card{background:var(--dark);border-radius:24px;padding:2.5rem;text-align:center;color:white;position:relative;overflow:hidden;}
-.app-card::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:radial-gradient(circle,rgba(229,62,30,0.3) 0%,transparent 70%);border-radius:50%;}
-.app-icon-big{width:80px;height:80px;background:linear-gradient(135deg,var(--red),var(--orange));border-radius:22px;display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 1.5rem;position:relative;z-index:1;}
-.app-card h3{font-size:1.5rem;font-weight:700;margin-bottom:0.75rem;position:relative;z-index:1;}
-.app-card p{font-size:14px;opacity:0.7;margin-bottom:1.5rem;position:relative;z-index:1;}
-.store-btn{display:inline-flex;align-items:center;gap:10px;background:white;color:var(--dark);padding:12px 24px;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;position:relative;z-index:1;transition:transform 0.2s;}
-.store-btn:hover{transform:scale(1.03);}
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(229, 62, 30, 0.2) 0%, transparent 70%);
+    }
 
-/* FAQ */
-.faq-list{display:flex;flex-direction:column;gap:1rem;max-width:800px;margin:0 auto;}
-.faq-item{border:1px solid var(--gray-border);border-radius:12px;overflow:hidden;}
-.faq-q{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 1.5rem;font-weight:600;cursor:pointer;font-size:15px;color:var(--dark);background:var(--white);transition:background 0.2s;gap:1rem;}
-.faq-q:hover{background:var(--gray-light);}
-.faq-toggle{width:28px;height:28px;background:var(--gray-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;color:var(--red);font-weight:700;}
-.faq-a{padding:0 1.5rem 1.25rem;font-size:14px;color:var(--text-muted);line-height:1.7;display:none;background:var(--white);}
-.faq-item.open .faq-a{display:block;}
-.faq-item.open .faq-q{color:var(--red);}
-.faq-item.open .faq-toggle{background:var(--red-bg);}
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
+    }
 
-/* PARTENAIRES */
-.partners-strip{background:var(--gray-light);padding:2.5rem 2rem;text-align:center;}
-.partners-label{font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:1.5rem;}
-.partners-logos{display:flex;gap:2rem;justify-content:center;align-items:center;flex-wrap:wrap;}
-.partner-logo{background:white;border:1px solid var(--gray-border);border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;color:var(--text-muted);}
+    .promo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(229, 62, 30, 0.2);
+      border: 1px solid var(--red-light);
+      color: var(--red-light);
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      animation: pulse 2s infinite;
+    }
 
-/* CTA FINAL */
-.cta-section{background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 50%,#7B1A08 100%);color:white;text-align:center;padding:5rem 2rem;}
-.cta-section h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:1rem;}
-.cta-section p{font-size:1.1rem;opacity:0.85;margin-bottom:2.5rem;}
+    @keyframes pulse {
 
-/* FOOTER */
-footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:3rem 2rem;}
-.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:2rem;}
-.footer-brand h3{color:white;font-family:'Sora',sans-serif;font-weight:700;font-size:1.2rem;margin-bottom:0.5rem;}
-.footer-brand h3 span{color:var(--red-light);}
-.footer-brand p{font-size:13px;line-height:1.7;}
-.footer-col h4{color:white;font-size:14px;font-weight:700;margin-bottom:1rem;}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
-.footer-col ul a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:13px;transition:color 0.2s;}
-.footer-col ul a:hover{color:var(--red-light);}
-.footer-bottom{text-align:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);font-size:12px;}
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(229, 62, 30, 0.3);
+      }
 
-@media(max-width:900px){
-  .inscription-grid{grid-template-columns:1fr;gap:2rem;}
-  .sim-grid{grid-template-columns:1fr;}
-  .sim-results{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:640px){
-  .nav-links{display:none;}
-  .promo-percent{font-size:4rem;}
-  .promo-container{gap:1.5rem;}
-  .promo-details{text-align:center;}
-  .hero-stats{gap:1.5rem;}
-  .countdown-boxes{gap:0.5rem;}
-  .cd-box{padding:0.75rem 1rem;min-width:70px;}
-  .cd-num{font-size:2rem;}
-  .sticky-cta{flex-direction:column;text-align:center;}
-}
-</style>
+      50% {
+        box-shadow: 0 0 0 8px rgba(229, 62, 30, 0);
+      }
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero h1 .highlight {
+      background: linear-gradient(135deg, var(--red-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 550px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--red), var(--orange));
+      color: white;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      font-family: 'Sora', sans-serif;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(229, 62, 30, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(229, 62, 30, 0.5);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      font-family: 'Sora', sans-serif;
+      transition: background 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      margin-top: 4rem;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 800;
+      font-family: 'Sora', sans-serif;
+      background: linear-gradient(135deg, var(--red-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 4px;
+    }
+
+    /* COUNTDOWN */
+    .countdown-section {
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      color: white;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .countdown-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .countdown-boxes {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cd-box {
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      min-width: 90px;
+    }
+
+    .cd-num {
+      font-size: 2.5rem;
+      font-weight: 800;
+      font-family: 'Sora', sans-serif;
+      line-height: 1;
+    }
+
+    .cd-label {
+      font-size: 11px;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    .cd-sep {
+      font-size: 2rem;
+      font-weight: 800;
+      align-self: center;
+      opacity: 0.5;
+    }
+
+    /* LIVE COUNTER */
+    .live-counter {
+      background: var(--dark);
+      padding: 2rem;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .live-item {
+      text-align: center;
+      color: white;
+    }
+
+    .live-num {
+      font-size: 1.8rem;
+      font-weight: 800;
+      font-family: 'Sora', sans-serif;
+      background: linear-gradient(135deg, var(--red-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .live-label {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 2px;
+    }
+
+    .live-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      margin-right: 6px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 5rem 2rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: inline-block;
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 550px;
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .section-center {
+      text-align: center;
+    }
+
+    .section-center .section-sub {
+      margin: 0 auto;
+    }
+
+    /* DIVIDER */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0 auto 3rem;
+      max-width: 100px;
+    }
+
+    .divider span {
+      display: block;
+      height: 3px;
+      border-radius: 3px;
+    }
+
+    .divider .d1 {
+      flex: 1;
+      background: var(--red);
+    }
+
+    .divider .d2 {
+      width: 8px;
+      height: 8px;
+      background: var(--orange);
+      border-radius: 50%;
+    }
+
+    .divider .d3 {
+      flex: 1;
+      background: var(--red);
+    }
+
+    /* PROMO BANNER */
+    .promo-banner {
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .promo-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .promo-percent {
+      font-size: 6rem;
+      font-weight: 800;
+      font-family: 'Sora', sans-serif;
+      line-height: 1;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .promo-details {
+      text-align: left;
+    }
+
+    .promo-details h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .promo-details p {
+      font-size: 1rem;
+      opacity: 0.9;
+      max-width: 400px;
+      line-height: 1.6;
+    }
+
+    .promo-timer {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      margin-top: 1rem;
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    /* STEPS */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .step-card {
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .step-num {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--red), var(--orange));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 1.1rem;
+      font-family: 'Sora', sans-serif;
+      margin-bottom: 1rem;
+    }
+
+    .step-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+
+    .step-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* SIMULATOR */
+    .sim-bg {
+      background: var(--gray-light);
+    }
+
+    .simulator {
+      background: var(--white);
+      border-radius: 24px;
+      border: 1px solid var(--gray-border);
+      padding: 2.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .sim-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .sim-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .sim-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--gray-border);
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--dark);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .sim-input:focus {
+      border-color: var(--red);
+    }
+
+    .sim-select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--gray-border);
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--dark);
+      outline: none;
+      background: white;
+    }
+
+    .sim-results {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .sim-res-card {
+      border-radius: 14px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .sim-res-card.before {
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+    }
+
+    .sim-res-card.after {
+      background: #F0FDF4;
+      border: 1px solid #86EFAC;
+    }
+
+    .sim-res-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .sim-res-card.before .sim-res-label {
+      color: #DC2626;
+    }
+
+    .sim-res-card.after .sim-res-label {
+      color: #16A34A;
+    }
+
+    .sim-res-amount {
+      font-size: 1.8rem;
+      font-weight: 800;
+      font-family: 'Sora', sans-serif;
+    }
+
+    .sim-res-card.before .sim-res-amount {
+      color: #DC2626;
+    }
+
+    .sim-res-card.after .sim-res-amount {
+      color: #16A34A;
+    }
+
+    .sim-economy {
+      background: linear-gradient(135deg, #FEF9C3, #FEF08A);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 1rem;
+      border: 1px solid #FCD34D;
+    }
+
+    .sim-economy p {
+      font-size: 14px;
+      color: #92400E;
+      font-weight: 600;
+    }
+
+    .sim-economy strong {
+      font-size: 1.2rem;
+      color: #78350F;
+    }
+
+    /* FEATURES */
+    .features-bg {
+      background: var(--gray-light);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid var(--gray-border);
+    }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 1.25rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* COMPARATIF */
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .comp-table thead {
+      background: var(--dark);
+      color: white;
+    }
+
+    .comp-table th {
+      padding: 1rem 1.25rem;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .comp-table th:first-child {
+      text-align: left;
+    }
+
+    .comp-table td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--gray-border);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .comp-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .comp-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comp-table tr:nth-child(even) {
+      background: var(--gray-light);
+    }
+
+    .comp-table .yes {
+      color: var(--green);
+      font-size: 18px;
+    }
+
+    .comp-table .no {
+      color: #EF4444;
+      font-size: 18px;
+    }
+
+    .comp-table .ok {
+      color: var(--gold);
+      font-size: 18px;
+    }
+
+    .comp-highlight td {
+      background: linear-gradient(135deg, #FFF1ED, #FFF9F7) !important;
+    }
+
+    .comp-highlight td:first-child {
+      border-left: 3px solid var(--red);
+    }
+
+    /* TARIFS */
+    .tarifs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .tarif-card {
+      border: 1px solid var(--gray-border);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--white);
+      transition: transform 0.2s;
+    }
+
+    .tarif-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .tarif-card.featured {
+      border-color: var(--red);
+      border-width: 2px;
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: 16px;
+      right: -25px;
+      background: linear-gradient(135deg, var(--red), var(--orange));
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 32px;
+      transform: rotate(35deg);
+      letter-spacing: 1px;
+    }
+
+    .tarif-range {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .tarif-amount {
+      font-size: 2.5rem;
+      font-weight: 800;
+      font-family: 'Sora', sans-serif;
+      color: var(--dark);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .tarif-unit {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .tarif-rate {
+      display: inline-block;
+      background: var(--red-bg);
+      color: var(--red);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .tarif-promo {
+      background: linear-gradient(135deg, var(--red-bg), #FFF9ED);
+      border: 1px dashed var(--red);
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 13px;
+      color: var(--red-dark);
+      font-weight: 600;
+    }
+
+    /* USECASES */
+    .usecases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .usecase-card {
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .usecase-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--red);
+    }
+
+    .usecase-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .usecase-card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .usecase-card p {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ENGAGEMENTS */
+    .engage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .engage-card {
+      background: var(--dark);
+      border-radius: 16px;
+      padding: 2rem;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .engage-card::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(229, 62, 30, 0.15);
+    }
+
+    .engage-num {
+      font-size: 3rem;
+      font-weight: 800;
+      font-family: 'Sora', sans-serif;
+      color: rgba(229, 62, 30, 0.3);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .engage-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .engage-card p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.6;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 24px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--red), var(--orange));
+      border-radius: 2px;
+    }
+
+    .tl-item {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .tl-dot {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--red), var(--orange));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+
+    .tl-content {
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      flex: 1;
+    }
+
+    .tl-year {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.25rem;
+    }
+
+    .tl-content h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .tl-content p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* TESTIMONIALS */
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testi-card {
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      position: relative;
+    }
+
+    .testi-card::before {
+      content: '"';
+      font-size: 5rem;
+      font-family: 'Sora', sans-serif;
+      color: var(--red-bg);
+      position: absolute;
+      top: -10px;
+      left: 16px;
+      line-height: 1;
+      font-weight: 800;
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .testi-text {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      font-style: italic;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .testi-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+      font-family: 'Sora', sans-serif;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .testi-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .testi-city {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .testi-badge {
+      display: inline-block;
+      background: var(--red-bg);
+      color: var(--red);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 100px;
+      margin-top: 2px;
+    }
+
+    /* ELIGIBILITE */
+    .eligib-bg {
+      background: var(--dark);
+      color: white;
+    }
+
+    .eligib-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .eligib-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 1.75rem;
+      text-align: center;
+    }
+
+    .eligib-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .eligib-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+
+    .eligib-card p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* SECURITE */
+    .secu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .secu-card {
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid var(--gray-border);
+    }
+
+    .secu-icon-wrap {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 1.25rem;
+    }
+
+    .secu-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+
+    .secu-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* INSCRIPTION */
+    .inscription-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .inscription-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .insc-step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .insc-dot {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--red), var(--orange));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .insc-content h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 2px;
+    }
+
+    .insc-content p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .app-card {
+      background: var(--dark);
+      border-radius: 24px;
+      padding: 2.5rem;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .app-card::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(229, 62, 30, 0.3) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .app-icon-big {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--red), var(--orange));
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      margin: 0 auto 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .app-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .app-card p {
+      font-size: 14px;
+      opacity: 0.7;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      color: var(--dark);
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.2s;
+    }
+
+    .store-btn:hover {
+      transform: scale(1.03);
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border: 1px solid var(--gray-border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 1.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 15px;
+      color: var(--dark);
+      background: var(--white);
+      transition: background 0.2s;
+      gap: 1rem;
+    }
+
+    .faq-q:hover {
+      background: var(--gray-light);
+    }
+
+    .faq-toggle {
+      width: 28px;
+      height: 28px;
+      background: var(--gray-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    .faq-a {
+      padding: 0 1.5rem 1.25rem;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      display: none;
+      background: var(--white);
+    }
+
+    .faq-item.open .faq-a {
+      display: block;
+    }
+
+    .faq-item.open .faq-q {
+      color: var(--red);
+    }
+
+    .faq-item.open .faq-toggle {
+      background: var(--red-bg);
+    }
+
+    /* PARTENAIRES */
+    .partners-strip {
+      background: var(--gray-light);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .partners-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .partners-logos {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .partner-logo {
+      background: white;
+      border: 1px solid var(--gray-border);
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    /* CTA FINAL */
+    .cta-section {
+      background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 50%, #7B1A08 100%);
+      color: white;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      margin-bottom: 2.5rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 3rem 2rem;
+    }
+
+    .footer-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-brand h3 {
+      color: white;
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-brand h3 span {
+      color: var(--red-light);
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .footer-col h4 {
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-col ul a {
+      color: rgba(255, 255, 255, 0.55);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul a:hover {
+      color: var(--red-light);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 12px;
+    }
+
+    @media(max-width:900px) {
+      .inscription-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .sim-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sim-results {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width:640px) {
+      .nav-links {
+        display: none;
+      }
+
+      .promo-percent {
+        font-size: 4rem;
+      }
+
+      .promo-container {
+        gap: 1.5rem;
+      }
+
+      .promo-details {
+        text-align: center;
+      }
+
+      .hero-stats {
+        gap: 1.5rem;
+      }
+
+      .countdown-boxes {
+        gap: 0.5rem;
+      }
+
+      .cd-box {
+        padding: 0.75rem 1rem;
+        min-width: 70px;
+      }
+
+      .cd-num {
+        font-size: 2rem;
+      }
+
+      .sticky-cta {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- STICKY BOTTOM CTA -->
-<div class="sticky-cta" id="stickyCta">
-  <p>🔥 Promo exclusive : <strong>-20% sur votre remboursement</strong> — Offre limitée !</p>
-  <a href="#inscription">Demander mon prêt maintenant →</a>
-</div>
-
-<!-- NAV -->
-<nav>
-  <a href="#" class="logo">
-    <div class="logo-icon">F</div>
-    <div class="logo-text">Flèche <span>Prêt Pro</span></div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#fonctionnement">Comment ça marche</a></li>
-    <li><a href="#simulateur">Simulateur</a></li>
-    <li><a href="#tarifs">Tarifs</a></li>
-    <li><a href="#temoignages">Avis clients</a></li>
-    <li><a href="#inscription">S'inscrire</a></li>
-    <li><a href="#inscription" class="nav-cta">Demander un prêt</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="promo-badge">🔥 Offre limitée — Promotion spéciale en cours</div>
-  <h1>Obtenez votre prêt <span class="highlight">rapidement</span>, remboursez <span class="highlight">20% moins</span></h1>
-  <p>Flèche Prêt Pro vous accompagne dans vos besoins financiers avec des prêts simples, rapides et accessibles depuis votre smartphone. Profitez de notre promotion exclusive !</p>
-  <div class="hero-btns">
-    <a href="#inscription" class="btn-primary">🚀 Demander mon prêt</a>
-    <a href="#simulateur" class="btn-secondary">🧮 Simuler mon prêt</a>
+  <!-- STICKY BOTTOM CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <p>🔥 Promo exclusive : <strong>-20% sur votre remboursement</strong> — Offre limitée !</p>
+    <a href="#inscription">Demander mon prêt maintenant →</a>
   </div>
-  <div class="hero-stats">
-    <div class="stat-item"><div class="stat-value">500K</div><div class="stat-label">XOF max disponible</div></div>
-    <div class="stat-item"><div class="stat-value">24H</div><div class="stat-label">Déblocage rapide</div></div>
-    <div class="stat-item"><div class="stat-value">3.5%</div><div class="stat-label">Taux minimum /an</div></div>
-    <div class="stat-item"><div class="stat-value">100K+</div><div class="stat-label">Utilisateurs actifs</div></div>
-  </div>
-</section>
 
-<!-- COUNTDOWN -->
-<div class="countdown-section">
-  <div class="countdown-title">⏳ La promotion se termine dans</div>
-  <div class="countdown-boxes">
-    <div class="cd-box"><div class="cd-num" id="cd-days">00</div><div class="cd-label">Jours</div></div>
-    <div class="cd-sep">:</div>
-    <div class="cd-box"><div class="cd-num" id="cd-hours">00</div><div class="cd-label">Heures</div></div>
-    <div class="cd-sep">:</div>
-    <div class="cd-box"><div class="cd-num" id="cd-mins">00</div><div class="cd-label">Minutes</div></div>
-    <div class="cd-sep">:</div>
-    <div class="cd-box"><div class="cd-num" id="cd-secs">00</div><div class="cd-label">Secondes</div></div>
-  </div>
-</div>
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="logo">
+      <div class="logo-icon">F</div>
+      <div class="logo-text">Flèche <span>Prêt Pro</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#fonctionnement">Comment ça marche</a></li>
+      <li><a href="#simulateur">Simulateur</a></li>
+      <li><a href="#tarifs">Tarifs</a></li>
+      <li><a href="#temoignages">Avis clients</a></li>
+      <li><a href="#inscription">S'inscrire</a></li>
+      <li><a href="#inscription" class="nav-cta">Demander un prêt</a></li>
+    </ul>
+  </nav>
 
-<!-- LIVE COUNTER -->
-<div class="live-counter">
-  <div class="live-item"><div class="live-num"><span class="live-dot"></span><span id="lc-loans">1 247</span></div><div class="live-label">Prêts accordés aujourd'hui</div></div>
-  <div class="live-item"><div class="live-num"><span id="lc-amount">187 450 000</span> XOF</div><div class="live-label">Montant total décaissé ce mois</div></div>
-  <div class="live-item"><div class="live-num"><span id="lc-users">103 294</span></div><div class="live-label">Utilisateurs satisfaits</div></div>
-  <div class="live-item"><div class="live-num">4.7 ⭐</div><div class="live-label">Note moyenne clients</div></div>
-</div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="promo-badge">🔥 Offre limitée — Promotion spéciale en cours</div>
+    <h1>Obtenez votre prêt <span class="highlight">rapidement</span>, remboursez <span class="highlight">20%
+        moins</span></h1>
+    <p>Flèche Prêt Pro vous accompagne dans vos besoins financiers avec des prêts simples, rapides et accessibles depuis
+      votre smartphone. Profitez de notre promotion exclusive !</p>
+    <div class="hero-btns">
+      <a href="#inscription" class="btn-primary">🚀 Demander mon prêt</a>
+      <a href="#simulateur" class="btn-secondary">🧮 Simuler mon prêt</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-value">500K</div>
+        <div class="stat-label">XOF max disponible</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">24H</div>
+        <div class="stat-label">Déblocage rapide</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">3.5%</div>
+        <div class="stat-label">Taux minimum /an</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">100K+</div>
+        <div class="stat-label">Utilisateurs actifs</div>
+      </div>
+    </div>
+  </section>
 
-<!-- PROMO BANNER -->
-<div class="promo-banner">
-  <div class="promo-container">
-    <div class="promo-percent">-20%</div>
-    <div class="promo-details">
-      <h2>Promotion Spéciale Remboursement !</h2>
-      <p>Profitez dès maintenant de <strong>20% de réduction sur votre remboursement</strong> de prêt. Une occasion unique pour alléger vos charges financières et rembourser moins que prévu !</p>
-      <div class="promo-timer">⏳ Offre disponible pour une durée limitée — Ne ratez pas cette opportunité !</div>
+  <!-- COUNTDOWN -->
+  <div class="countdown-section">
+    <div class="countdown-title">⏳ La promotion se termine dans</div>
+    <div class="countdown-boxes">
+      <div class="cd-box">
+        <div class="cd-num" id="cd-days">00</div>
+        <div class="cd-label">Jours</div>
+      </div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box">
+        <div class="cd-num" id="cd-hours">00</div>
+        <div class="cd-label">Heures</div>
+      </div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box">
+        <div class="cd-num" id="cd-mins">00</div>
+        <div class="cd-label">Minutes</div>
+      </div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box">
+        <div class="cd-num" id="cd-secs">00</div>
+        <div class="cd-label">Secondes</div>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- FONCTIONNEMENT -->
-<section id="fonctionnement">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Notre processus</span>
-      <h2 class="section-title">Comment fonctionne Flèche Prêt Pro ?</h2>
-      <p class="section-sub">Une plateforme de micro-crédit mobile entièrement digitale, conçue pour vous aider à résoudre vos problèmes financiers rapidement et sans stress.</p>
+  <!-- LIVE COUNTER -->
+  <div class="live-counter">
+    <div class="live-item">
+      <div class="live-num"><span class="live-dot"></span><span id="lc-loans">1 247</span></div>
+      <div class="live-label">Prêts accordés aujourd'hui</div>
     </div>
-    <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-    <div class="steps-grid">
-      <div class="step-card"><div class="step-num">1</div><h3>Téléchargez l'application</h3><p>Installez Flèche Prêt Pro sur le Play Store et créez votre compte en quelques minutes avec votre numéro de téléphone.</p></div>
-      <div class="step-card"><div class="step-num">2</div><h3>Remplissez votre dossier</h3><p>Complétez le formulaire de demande de prêt en renseignant vos informations personnelles et financières directement dans l'app.</p></div>
-      <div class="step-card"><div class="step-num">3</div><h3>Obtenez votre décision</h3><p>Notre algorithme analyse votre profil rapidement. Vous recevez une notification d'approbation dans les plus brefs délais.</p></div>
-      <div class="step-card"><div class="step-num">4</div><h3>Recevez votre argent</h3><p>Une fois approuvé, les fonds sont débloqués et transférés sur votre Mobile Money ou compte bancaire sous 24h.</p></div>
-      <div class="step-card"><div class="step-num">5</div><h3>Remboursez avec la promo</h3><p>Remboursez selon le plan défini (3 à 24 mois) directement via l'app — et profitez de -20% pendant la promo !</p></div>
+    <div class="live-item">
+      <div class="live-num"><span id="lc-amount">187 450 000</span> XOF</div>
+      <div class="live-label">Montant total décaissé ce mois</div>
+    </div>
+    <div class="live-item">
+      <div class="live-num"><span id="lc-users">103 294</span></div>
+      <div class="live-label">Utilisateurs satisfaits</div>
+    </div>
+    <div class="live-item">
+      <div class="live-num">4.7 ⭐</div>
+      <div class="live-label">Note moyenne clients</div>
     </div>
   </div>
-</section>
 
-<!-- SIMULATEUR -->
-<section class="sim-bg" id="simulateur">
-  <div class="container">
-    <div class="section-header section-center">
-      <span class="section-label">Calculateur</span>
-      <h2 class="section-title">Simulez votre prêt & votre économie</h2>
-      <p class="section-sub">Entrez vos paramètres et voyez exactement combien vous économisez grâce à la promotion -20%.</p>
+  <!-- PROMO BANNER -->
+  <div class="promo-banner">
+    <div class="promo-container">
+      <div class="promo-percent">-20%</div>
+      <div class="promo-details">
+        <h2>Promotion Spéciale Remboursement !</h2>
+        <p>Profitez dès maintenant de <strong>20% de réduction sur votre remboursement</strong> de prêt. Une occasion
+          unique pour alléger vos charges financières et rembourser moins que prévu !</p>
+        <div class="promo-timer">⏳ Offre disponible pour une durée limitée — Ne ratez pas cette opportunité !</div>
+      </div>
     </div>
-    <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-    <div class="simulator">
-      <div class="sim-grid">
-        <div>
-          <div class="sim-label">Montant souhaité (XOF)</div>
-          <input type="number" class="sim-input" id="simAmount" value="150000" min="30000" max="500000" step="10000" oninput="calcSim()">
+  </div>
+
+  <!-- FONCTIONNEMENT -->
+  <section id="fonctionnement">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Notre processus</span>
+        <h2 class="section-title">Comment fonctionne Flèche Prêt Pro ?</h2>
+        <p class="section-sub">Une plateforme de micro-crédit mobile entièrement digitale, conçue pour vous aider à
+          résoudre vos problèmes financiers rapidement et sans stress.</p>
+      </div>
+      <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>Téléchargez l'application</h3>
+          <p>Installez Flèche Prêt Pro sur le Play Store et créez votre compte en quelques minutes avec votre numéro de
+            téléphone.</p>
         </div>
-        <div>
-          <div class="sim-label">Durée de remboursement</div>
-          <select class="sim-select" id="simDuration" onchange="calcSim()">
-            <option value="3">3 mois</option>
-            <option value="6">6 mois</option>
-            <option value="12" selected>12 mois</option>
-            <option value="18">18 mois</option>
-            <option value="24">24 mois</option>
-          </select>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>Remplissez votre dossier</h3>
+          <p>Complétez le formulaire de demande de prêt en renseignant vos informations personnelles et financières
+            directement dans l'app.</p>
         </div>
-        <div>
-          <div class="sim-label">Taux d'intérêt annuel</div>
-          <select class="sim-select" id="simRate" onchange="calcSim()">
-            <option value="3.5">3.5% (minimum)</option>
-            <option value="6">6%</option>
-            <option value="8" selected>8% (moyen)</option>
-            <option value="10">10%</option>
-            <option value="12">12% (maximum)</option>
-          </select>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>Obtenez votre décision</h3>
+          <p>Notre algorithme analyse votre profil rapidement. Vous recevez une notification d'approbation dans les plus
+            brefs délais.</p>
         </div>
-        <div>
-          <div class="sim-label">Type de prêt</div>
-          <select class="sim-select">
-            <option>Personnel</option>
-            <option>Commerce</option>
-            <option>Urgence médicale</option>
-            <option>Éducation</option>
-          </select>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h3>Recevez votre argent</h3>
+          <p>Une fois approuvé, les fonds sont débloqués et transférés sur votre Mobile Money ou compte bancaire sous
+            24h.</p>
         </div>
-      </div>
-      <div class="sim-results">
-        <div class="sim-res-card before">
-          <div class="sim-res-label">Sans promotion</div>
-          <div class="sim-res-amount" id="simBefore">—</div>
-          <div style="font-size:12px;color:#DC2626;margin-top:4px;">Total à rembourser</div>
-        </div>
-        <div class="sim-res-card after">
-          <div class="sim-res-label">Avec promo -20%</div>
-          <div class="sim-res-amount" id="simAfter">—</div>
-          <div style="font-size:12px;color:#16A34A;margin-top:4px;">Vous payez seulement</div>
-        </div>
-      </div>
-      <div class="sim-economy">
-        <p>💰 Votre économie grâce à la promotion : <strong id="simEconomy">—</strong> XOF</p>
-      </div>
-      <div style="text-align:center;margin-top:1.5rem;">
-        <a href="#inscription" class="btn-primary">🚀 Profiter de cette offre maintenant</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CAS D'USAGE -->
-<section>
-  <div class="container">
-    <div class="section-header section-center">
-      <span class="section-label">Pour quoi utiliser votre prêt ?</span>
-      <h2 class="section-title">Des solutions pour tous vos besoins</h2>
-      <p class="section-sub">Flèche Prêt Pro finance tous vos projets de vie, du quotidien aux urgences imprévues.</p>
-    </div>
-    <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-    <div class="usecases-grid">
-      <div class="usecase-card"><div class="usecase-icon">🏥</div><h4>Urgence médicale</h4><p>Financez vos soins de santé ou ceux de votre famille sans attendre.</p></div>
-      <div class="usecase-card"><div class="usecase-icon">🛒</div><h4>Fonds de commerce</h4><p>Boostez votre activité commerciale, achetez du stock ou équipez-vous.</p></div>
-      <div class="usecase-card"><div class="usecase-icon">🎓</div><h4>Éducation & scolarité</h4><p>Payez les frais de scolarité de vos enfants ou votre propre formation.</p></div>
-      <div class="usecase-card"><div class="usecase-icon">🏠</div><h4>Loyer & logement</h4><p>Couvrez votre loyer, une caution ou des travaux urgents dans votre logement.</p></div>
-      <div class="usecase-card"><div class="usecase-icon">✈️</div><h4>Voyage & événement</h4><p>Financez un voyage, un mariage, des funérailles ou une fête de famille.</p></div>
-      <div class="usecase-card"><div class="usecase-icon">📱</div><h4>Équipement tech</h4><p>Achetez un smartphone, un ordinateur ou tout autre équipement professionnel.</p></div>
-      <div class="usecase-card"><div class="usecase-icon">🚗</div><h4>Transport</h4><p>Réparez votre véhicule ou financez un moyen de transport pour votre activité.</p></div>
-      <div class="usecase-card"><div class="usecase-icon">💡</div><h4>Factures & charges</h4><p>Réglez vos factures d'électricité, eau ou toute autre charge urgente du quotidien.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section class="features-bg">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Nos avantages</span>
-      <h2 class="section-title">Pourquoi choisir Flèche Prêt Pro ?</h2>
-      <p class="section-sub">Une solution de crédit pensée pour les besoins réels des Africains, accessible partout et à tout moment.</p>
-    </div>
-    <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-    <div class="features-grid">
-      <div class="feature-card"><div class="feature-icon" style="background:#FFF1ED;">📱</div><h3>100% Mobile</h3><p>Tout se fait depuis votre smartphone, sans file d'attente ni paperasse. Votre banque dans votre poche, disponible 24h/24.</p></div>
-      <div class="feature-card"><div class="feature-icon" style="background:#F0FDF4;">⚡</div><h3>Rapidité garantie</h3><p>Déblocage des fonds en moins de 24 heures après approbation. Plus d'attente interminable comme dans les banques traditionnelles.</p></div>
-      <div class="feature-card"><div class="feature-icon" style="background:#EFF6FF;">🔒</div><h3>Sécurisé & confidentiel</h3><p>Vos données sont protégées par des protocoles de sécurité avancés. Votre vie privée est notre priorité absolue.</p></div>
-      <div class="feature-card"><div class="feature-icon" style="background:#FEFCE8;">💰</div><h3>Taux transparents</h3><p>Aucuns frais cachés. Taux affichés clairement entre 3,5% et 12% par an. Vous savez exactement ce que vous remboursez dès le départ.</p></div>
-      <div class="feature-card"><div class="feature-icon" style="background:#FDF4FF;">📅</div><h3>Flexibilité totale</h3><p>Choisissez votre durée de 3 à 24 mois selon votre situation financière. Remboursements adaptés à vos revenus mensuels.</p></div>
-      <div class="feature-card" style="border:2px solid var(--red);"><div class="feature-icon" style="background:#FFF1ED;border:2px solid var(--red);">🎁</div><h3 style="color:var(--red);">Promo -20% en cours !</h3><p>Profitez de notre promotion exclusive : <strong>20% de réduction sur votre remboursement</strong>. Une économie réelle et immédiate.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- COMPARATIF -->
-<section>
-  <div class="container">
-    <div class="section-header section-center">
-      <span class="section-label">Comparatif</span>
-      <h2 class="section-title">Flèche Prêt Pro vs les autres solutions</h2>
-      <p class="section-sub">Découvrez pourquoi des milliers d'Ivoiriens choisissent Flèche Prêt Pro plutôt que les alternatives traditionnelles.</p>
-    </div>
-    <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-    <div style="overflow-x:auto;">
-      <table class="comp-table">
-        <thead>
-          <tr>
-            <th>Critère</th>
-            <th style="color:var(--red-light);">⚡ Flèche Prêt Pro</th>
-            <th>🏦 Banque traditionnelle</th>
-            <th>🤝 Tontine / Proche</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="comp-highlight"><td>Délai d'obtention</td><td><strong style="color:var(--green);">Moins de 24h</strong></td><td>2 à 4 semaines</td><td>Variable</td></tr>
-          <tr><td>100% en ligne</td><td><span class="yes">✓</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td></tr>
-          <tr class="comp-highlight"><td>Dossier simplifié</td><td><span class="yes">✓</span></td><td><span class="no">✗</span></td><td><span class="ok">≈</span></td></tr>
-          <tr><td>Disponible 24h/24</td><td><span class="yes">✓</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td></tr>
-          <tr class="comp-highlight"><td>Sans garantie physique</td><td><span class="yes">✓</span></td><td><span class="no">✗</span></td><td><span class="ok">≈</span></td></tr>
-          <tr><td>Taux transparent</td><td><span class="yes">✓</span></td><td><span class="ok">≈</span></td><td><span class="no">✗</span></td></tr>
-          <tr class="comp-highlight"><td>Promo -20% disponible</td><td><span class="yes">✓</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td></tr>
-          <tr><td>Remboursement flexible</td><td><span class="yes">✓</span></td><td><span class="ok">≈</span></td><td><span class="no">✗</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- TARIFS -->
-<section id="tarifs" class="features-bg">
-  <div class="container">
-    <div class="section-header section-center">
-      <span class="section-label">Offres de prêt</span>
-      <h2 class="section-title">Nos montants disponibles</h2>
-      <p class="section-sub">Des prêts adaptés à tous vos besoins, avec la promotion -20% appliquée sur le remboursement total.</p>
-    </div>
-    <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-    <div class="tarifs-grid">
-      <div class="tarif-card">
-        <div class="tarif-range">Prêt de départ</div>
-        <div class="tarif-amount">30K</div>
-        <div class="tarif-unit">à 150 000 XOF</div>
-        <div class="tarif-rate">Taux : 3,5% – 6% / an</div>
-        <ul style="text-align:left;font-size:13px;color:var(--text-muted);list-style:none;margin-bottom:1.25rem;line-height:2.2;">
-          <li>✅ Durée : 3 à 12 mois</li>
-          <li>✅ Déblocage en 24h</li>
-          <li>✅ Aucun frais caché</li>
-          <li>✅ Eligible à la promo -20%</li>
-          <li>✅ Idéal pour urgences & quotidien</li>
-        </ul>
-        <div class="tarif-promo">🎉 Avec promo : -20% sur remboursement</div>
-      </div>
-      <div class="tarif-card featured">
-        <div class="featured-badge">POPULAIRE</div>
-        <div class="tarif-range">Prêt intermédiaire</div>
-        <div class="tarif-amount">150K</div>
-        <div class="tarif-unit">à 350 000 XOF</div>
-        <div class="tarif-rate">Taux : 6% – 10% / an</div>
-        <ul style="text-align:left;font-size:13px;color:var(--text-muted);list-style:none;margin-bottom:1.25rem;line-height:2.2;">
-          <li>✅ Durée : 6 à 18 mois</li>
-          <li>✅ Déblocage en 24h</li>
-          <li>✅ Aucun frais caché</li>
-          <li>✅ Eligible à la promo -20%</li>
-          <li>✅ Idéal pour commerce & projets</li>
-        </ul>
-        <div class="tarif-promo">🎉 Avec promo : -20% sur remboursement</div>
-      </div>
-      <div class="tarif-card">
-        <div class="tarif-range">Prêt maximum</div>
-        <div class="tarif-amount">350K</div>
-        <div class="tarif-unit">à 500 000 XOF</div>
-        <div class="tarif-rate">Taux : 10% – 12% / an</div>
-        <ul style="text-align:left;font-size:13px;color:var(--text-muted);list-style:none;margin-bottom:1.25rem;line-height:2.2;">
-          <li>✅ Durée : 12 à 24 mois</li>
-          <li>✅ Déblocage en 24h</li>
-          <li>✅ Aucun frais caché</li>
-          <li>✅ Eligible à la promo -20%</li>
-          <li>✅ Idéal pour grands projets</li>
-        </ul>
-        <div class="tarif-promo">🎉 Avec promo : -20% sur remboursement</div>
-      </div>
-    </div>
-    <p style="text-align:center;margin-top:1.5rem;font-size:12px;color:var(--text-muted);">* Des frais de retard de 0,1%/jour (plafonnés à 18% du principal) peuvent s'appliquer en cas de retard de paiement.</p>
-  </div>
-</section>
-
-<!-- ENGAGEMENTS -->
-<section>
-  <div class="container">
-    <div class="section-header section-center">
-      <span class="section-label">Nos valeurs</span>
-      <h2 class="section-title">Nos engagements envers vous</h2>
-      <p class="section-sub">Flèche Prêt Pro s'engage à vous offrir une expérience financière honnête, rapide et respectueuse.</p>
-    </div>
-    <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-    <div class="engage-grid">
-      <div class="engage-card"><div class="engage-num">01</div><h3>Rapidité</h3><p>Nous nous engageons à traiter votre demande et à débloquer vos fonds en moins de 24 heures après validation.</p></div>
-      <div class="engage-card"><div class="engage-num">02</div><h3>Transparence totale</h3><p>Tous les taux, frais et conditions vous sont communiqués avant toute signature. Zéro surprise, zéro frais cachés.</p></div>
-      <div class="engage-card"><div class="engage-num">03</div><h3>Confidentialité</h3><p>Vos données personnelles et financières ne sont jamais partagées avec des tiers sans votre consentement explicite.</p></div>
-      <div class="engage-card"><div class="engage-num">04</div><h3>Accessibilité</h3><p>Notre service est disponible 24h/24 et 7j/7 depuis votre smartphone, partout où vous vous trouvez en Afrique de l'Ouest.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- TIMELINE -->
-<section class="features-bg">
-  <div class="container">
-    <div class="section-header section-center">
-      <span class="section-label">Notre parcours</span>
-      <h2 class="section-title">L'histoire de Flèche Prêt Pro</h2>
-      <p class="section-sub">Une société née d'un constat simple : les Africains méritent un accès rapide et facile au crédit.</p>
-    </div>
-    <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-    <div class="timeline">
-      <div class="tl-item"><div class="tl-dot">🌱</div><div class="tl-content"><div class="tl-year">Fondation</div><h4>Naissance de l'idée</h4><p>Face au manque d'accès au crédit pour les populations non bancarisées d'Afrique de l'Ouest, l'idée d'une plateforme de micro-crédit mobile 100% digitale est lancée.</p></div></div>
-      <div class="tl-item"><div class="tl-dot">📱</div><div class="tl-content"><div class="tl-year">Développement</div><h4>Création de l'application</h4><p>L'équipe technique développe l'application Flèche Prêt Pro, conçue pour être simple, intuitive et accessible à tous, même avec une connexion lente.</p></div></div>
-      <div class="tl-item"><div class="tl-dot">🚀</div><div class="tl-content"><div class="tl-year">Lancement 2025</div><h4>Mise en service officielle</h4><p>Flèche Prêt Pro est officiellement lancé sur le Google Play Store et accueille ses premiers clients en Côte d'Ivoire avec des prêts de 30 000 à 500 000 XOF.</p></div></div>
-      <div class="tl-item"><div class="tl-dot">📈</div><div class="tl-content"><div class="tl-year">Croissance rapide</div><h4>100 000+ utilisateurs</h4><p>En quelques mois, Flèche Prêt Pro dépasse les 100 000 utilisateurs actifs et décaisse des centaines de millions de XOF pour aider les Ivoiriens à financer leurs projets.</p></div></div>
-      <div class="tl-item"><div class="tl-dot">🎁</div><div class="tl-content"><div class="tl-year">Aujourd'hui</div><h4>Promotion -20% pour nos clients</h4><p>Pour remercier nos clients fidèles et accueillir de nouveaux utilisateurs, Flèche Prêt Pro lance une promotion exceptionnelle de 20% de réduction sur les remboursements.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- TEMOIGNAGES -->
-<section id="temoignages">
-  <div class="container">
-    <div class="section-header section-center">
-      <span class="section-label">Avis clients</span>
-      <h2 class="section-title">Ce que disent nos clients</h2>
-      <p class="section-sub">Des milliers d'Ivoiriens font confiance à Flèche Prêt Pro pour gérer leurs besoins financiers au quotidien.</p>
-    </div>
-    <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-text">J'avais une urgence médicale pour ma mère et j'avais besoin de 120 000 XOF rapidement. En moins de 3 heures, l'argent était sur mon mobile money. Vraiment impressionnant, merci Flèche Prêt Pro !</p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#E53E1E,#F97316);">AK</div>
-          <div><div class="testi-name">Adjoua Kouassi</div><div class="testi-city">Abidjan, Cocody</div><div class="testi-badge">Client vérifié</div></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-text">Je suis commerçante au marché d'Adjamé. Grâce à Flèche Prêt Pro, j'ai pu renouveler mon stock pour la fête de fin d'année. Le processus est simple et l'argent est arrivé le lendemain matin !</p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#7C3AED,#DB2777);">MB</div>
-          <div><div class="testi-name">Marie-Claire Bamba</div><div class="testi-city">Abidjan, Adjamé</div><div class="testi-badge">Client vérifié</div></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="stars">★★★★☆</div>
-        <p class="testi-text">Avec la promo de -20%, j'ai économisé plus de 30 000 XOF sur mon remboursement. C'est une vraie économie pour moi. Je recommande cette application à tous mes collègues fonctionnaires.</p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#0EA5E9,#10B981);">KD</div>
-          <div><div class="testi-name">Koffi Diomandé</div><div class="testi-city">Yamoussoukro</div><div class="testi-badge">Client vérifié</div></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-text">Avant, j'allais à la tontine ou je demandais à des proches. Maintenant avec Flèche Prêt Pro, je suis autonome financièrement. L'application est facile à utiliser même pour quelqu'un comme moi peu habitué à la technologie.</p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#F59E0B,#EF4444);">YT</div>
-          <div><div class="testi-name">Yao Tanoh</div><div class="testi-city">Bouaké</div><div class="testi-badge">Client vérifié</div></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-text">J'ai payé la scolarité de mes enfants grâce à un prêt de 200 000 XOF. La réponse était rapide, les termes clairs et le remboursement étalé sur 12 mois s'adapte parfaitement à mon salaire.</p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#10B981,#3B82F6);">FA</div>
-          <div><div class="testi-name">Fatou Abidjan</div><div class="testi-city">San Pedro</div><div class="testi-badge">Client vérifié</div></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-text">Service client très réactif, processus simple et transparent. J'ai eu mon prêt sans aucun tracas administratif. La promo -20% c'est du bonus ! Je vais certainement renouveler ma demande bientôt.</p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#6366F1,#EC4899);">IC</div>
-          <div><div class="testi-name">Ismaël Coulibaly</div><div class="testi-city">Abidjan, Yopougon</div><div class="testi-badge">Client vérifié</div></div>
+        <div class="step-card">
+          <div class="step-num">5</div>
+          <h3>Remboursez avec la promo</h3>
+          <p>Remboursez selon le plan défini (3 à 24 mois) directement via l'app — et profitez de -20% pendant la promo
+            !</p>
         </div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:2rem;padding:1.25rem;background:var(--gray-light);border-radius:12px;max-width:400px;margin-left:auto;margin-right:auto;">
-      <div style="font-size:2.5rem;font-weight:800;font-family:'Sora',sans-serif;color:var(--gold);">4.7 / 5</div>
-      <div style="color:var(--gold);font-size:1.2rem;margin:4px 0;">★★★★★</div>
-      <div style="font-size:13px;color:var(--text-muted);">Basé sur +1 200 avis clients vérifiés</div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ELIGIBILITE -->
-<section class="eligib-bg" style="padding:4rem 2rem;">
-  <div class="container">
-    <div class="section-header section-center" style="color:white;">
-      <span class="section-label" style="color:var(--red-light);">Critères d'accès</span>
-      <h2 class="section-title" style="color:white;">Êtes-vous éligible ?</h2>
-      <p class="section-sub" style="color:rgba(255,255,255,0.65);margin:0 auto;">Vérifiez que vous remplissez les conditions pour accéder à un prêt Flèche Prêt Pro.</p>
-    </div>
-    <div style="margin-bottom:3rem;"></div>
-    <div class="eligib-grid">
-      <div class="eligib-card"><div class="eligib-icon">🎂</div><h3>Âge requis</h3><p>Avoir entre 20 et 65 ans au moment de la demande de prêt</p></div>
-      <div class="eligib-card"><div class="eligib-icon">🏠</div><h3>Résident légal</h3><p>Être résident légal avec une pièce d'identité nationale valide</p></div>
-      <div class="eligib-card"><div class="eligib-icon">💼</div><h3>Revenu fixe</h3><p>Disposer d'un revenu fixe régulier (salarié, commerçant, fonctionnaire…)</p></div>
-      <div class="eligib-card"><div class="eligib-icon">📱</div><h3>Smartphone Android</h3><p>Posséder un smartphone Android pour installer et utiliser l'application</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- SECURITE -->
-<section>
-  <div class="container">
-    <div class="section-header section-center">
-      <span class="section-label">Sécurité & confidentialité</span>
-      <h2 class="section-title">Vos données sont en sécurité</h2>
-      <p class="section-sub">Flèche Prêt Pro met en place les meilleures pratiques de sécurité pour protéger vos informations personnelles et financières.</p>
-    </div>
-    <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-    <div class="secu-grid">
-      <div class="secu-card"><div class="secu-icon-wrap" style="background:#EFF6FF;">🔐</div><h3>Chiffrement des données</h3><p>Toutes vos informations sont chiffrées avec les protocoles de sécurité les plus récents. Aucune donnée n'est transmise en clair sur le réseau.</p></div>
-      <div class="secu-card"><div class="secu-icon-wrap" style="background:#F0FDF4;">🛡️</div><h3>Vérification d'identité</h3><p>Notre processus de vérification d'identité (KYC) garantit que seuls les utilisateurs légitimes accèdent à nos services de prêt.</p></div>
-      <div class="secu-card"><div class="secu-icon-wrap" style="background:#FFF1ED;">👁️</div><h3>Pas de partage tiers</h3><p>Vos données personnelles ne sont jamais vendues ou partagées avec des tiers à des fins publicitaires ou commerciales.</p></div>
-      <div class="secu-card"><div class="secu-icon-wrap" style="background:#FEFCE8;">📋</div><h3>Conformité réglementaire</h3><p>Flèche Prêt Pro s'engage à respecter les réglementations locales sur la protection des données personnelles en vigueur en Côte d'Ivoire.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- INSCRIPTION -->
-<section id="inscription" class="features-bg">
-  <div class="container">
-    <div class="inscription-grid">
-      <div>
-        <span class="section-label">Inscription</span>
-        <h2 class="section-title">Comment s'inscrire sur Flèche Prêt Pro ?</h2>
-        <p style="color:var(--text-muted);margin-bottom:2rem;font-size:14px;">Créez votre compte en quelques étapes simples et commencez à accéder aux prêts dont vous avez besoin — avec la promo -20% active !</p>
-        <div class="inscription-steps">
-          <div class="insc-step"><div class="insc-dot">1</div><div class="insc-content"><h4>Téléchargez l'app sur Play Store</h4><p>Recherchez "Flèche Prêt Pro" sur le Google Play Store et installez gratuitement.</p></div></div>
-          <div class="insc-step"><div class="insc-dot">2</div><div class="insc-content"><h4>Entrez votre numéro de téléphone</h4><p>Inscrivez-vous avec votre propre numéro. Un code de vérification SMS vous sera envoyé.</p></div></div>
-          <div class="insc-step"><div class="insc-dot">3</div><div class="insc-content"><h4>Complétez votre profil</h4><p>Renseignez votre identité, situation professionnelle et revenus mensuels.</p></div></div>
-          <div class="insc-step"><div class="insc-dot">4</div><div class="insc-content"><h4>Soumettez votre demande de prêt</h4><p>Choisissez le montant et la durée de remboursement, puis soumettez votre dossier.</p></div></div>
-          <div class="insc-step"><div class="insc-dot">5</div><div class="insc-content"><h4>Recevez vos fonds + promo -20%</h4><p>Après approbation, fonds sur votre Mobile Money en moins de 24h. La réduction -20% est automatiquement appliquée pendant la promo.</p></div></div>
+  <!-- SIMULATEUR -->
+  <section class="sim-bg" id="simulateur">
+    <div class="container">
+      <div class="section-header section-center">
+        <span class="section-label">Calculateur</span>
+        <h2 class="section-title">Simulez votre prêt & votre économie</h2>
+        <p class="section-sub">Entrez vos paramètres et voyez exactement combien vous économisez grâce à la promotion
+          -20%.</p>
+      </div>
+      <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+      <div class="simulator">
+        <div class="sim-grid">
+          <div>
+            <div class="sim-label">Montant souhaité (XOF)</div>
+            <input type="number" class="sim-input" id="simAmount" value="150000" min="30000" max="500000" step="10000"
+              oninput="calcSim()">
+          </div>
+          <div>
+            <div class="sim-label">Durée de remboursement</div>
+            <select class="sim-select" id="simDuration" onchange="calcSim()">
+              <option value="3">3 mois</option>
+              <option value="6">6 mois</option>
+              <option value="12" selected>12 mois</option>
+              <option value="18">18 mois</option>
+              <option value="24">24 mois</option>
+            </select>
+          </div>
+          <div>
+            <div class="sim-label">Taux d'intérêt annuel</div>
+            <select class="sim-select" id="simRate" onchange="calcSim()">
+              <option value="3.5">3.5% (minimum)</option>
+              <option value="6">6%</option>
+              <option value="8" selected>8% (moyen)</option>
+              <option value="10">10%</option>
+              <option value="12">12% (maximum)</option>
+            </select>
+          </div>
+          <div>
+            <div class="sim-label">Type de prêt</div>
+            <select class="sim-select">
+              <option>Personnel</option>
+              <option>Commerce</option>
+              <option>Urgence médicale</option>
+              <option>Éducation</option>
+            </select>
+          </div>
+        </div>
+        <div class="sim-results">
+          <div class="sim-res-card before">
+            <div class="sim-res-label">Sans promotion</div>
+            <div class="sim-res-amount" id="simBefore">—</div>
+            <div style="font-size:12px;color:#DC2626;margin-top:4px;">Total à rembourser</div>
+          </div>
+          <div class="sim-res-card after">
+            <div class="sim-res-label">Avec promo -20%</div>
+            <div class="sim-res-amount" id="simAfter">—</div>
+            <div style="font-size:12px;color:#16A34A;margin-top:4px;">Vous payez seulement</div>
+          </div>
+        </div>
+        <div class="sim-economy">
+          <p>💰 Votre économie grâce à la promotion : <strong id="simEconomy">—</strong> XOF</p>
+        </div>
+        <div style="text-align:center;margin-top:1.5rem;">
+          <a href="#inscription" class="btn-primary">🚀 Profiter de cette offre maintenant</a>
         </div>
       </div>
-      <div class="app-card">
-        <div class="app-icon-big">⚡</div>
-        <h3>Flèche Prêt Pro</h3>
-        <p>Disponible gratuitement sur Android. Téléchargez maintenant et profitez de la promotion -20% sur vos remboursements !</p>
-        <a href="#" class="store-btn">▶ Google Play Store</a>
-        <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.1);">
-          <p style="font-size:12px;color:rgba(255,255,255,0.5);line-height:2;">
-            📧 flechepretpro@flechepretpro.com<br>
-            📍 Abidjan — Lun–Sam, 8h30 à 17h00<br>
-            🌍 Service disponible en Côte d'Ivoire
+    </div>
+  </section>
+
+  <!-- CAS D'USAGE -->
+  <section>
+    <div class="container">
+      <div class="section-header section-center">
+        <span class="section-label">Pour quoi utiliser votre prêt ?</span>
+        <h2 class="section-title">Des solutions pour tous vos besoins</h2>
+        <p class="section-sub">Flèche Prêt Pro finance tous vos projets de vie, du quotidien aux urgences imprévues.</p>
+      </div>
+      <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+      <div class="usecases-grid">
+        <div class="usecase-card">
+          <div class="usecase-icon">🏥</div>
+          <h4>Urgence médicale</h4>
+          <p>Financez vos soins de santé ou ceux de votre famille sans attendre.</p>
+        </div>
+        <div class="usecase-card">
+          <div class="usecase-icon">🛒</div>
+          <h4>Fonds de commerce</h4>
+          <p>Boostez votre activité commerciale, achetez du stock ou équipez-vous.</p>
+        </div>
+        <div class="usecase-card">
+          <div class="usecase-icon">🎓</div>
+          <h4>Éducation & scolarité</h4>
+          <p>Payez les frais de scolarité de vos enfants ou votre propre formation.</p>
+        </div>
+        <div class="usecase-card">
+          <div class="usecase-icon">🏠</div>
+          <h4>Loyer & logement</h4>
+          <p>Couvrez votre loyer, une caution ou des travaux urgents dans votre logement.</p>
+        </div>
+        <div class="usecase-card">
+          <div class="usecase-icon">✈️</div>
+          <h4>Voyage & événement</h4>
+          <p>Financez un voyage, un mariage, des funérailles ou une fête de famille.</p>
+        </div>
+        <div class="usecase-card">
+          <div class="usecase-icon">📱</div>
+          <h4>Équipement tech</h4>
+          <p>Achetez un smartphone, un ordinateur ou tout autre équipement professionnel.</p>
+        </div>
+        <div class="usecase-card">
+          <div class="usecase-icon">🚗</div>
+          <h4>Transport</h4>
+          <p>Réparez votre véhicule ou financez un moyen de transport pour votre activité.</p>
+        </div>
+        <div class="usecase-card">
+          <div class="usecase-icon">💡</div>
+          <h4>Factures & charges</h4>
+          <p>Réglez vos factures d'électricité, eau ou toute autre charge urgente du quotidien.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-bg">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nos avantages</span>
+        <h2 class="section-title">Pourquoi choisir Flèche Prêt Pro ?</h2>
+        <p class="section-sub">Une solution de crédit pensée pour les besoins réels des Africains, accessible partout et
+          à tout moment.</p>
+      </div>
+      <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#FFF1ED;">📱</div>
+          <h3>100% Mobile</h3>
+          <p>Tout se fait depuis votre smartphone, sans file d'attente ni paperasse. Votre banque dans votre poche,
+            disponible 24h/24.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#F0FDF4;">⚡</div>
+          <h3>Rapidité garantie</h3>
+          <p>Déblocage des fonds en moins de 24 heures après approbation. Plus d'attente interminable comme dans les
+            banques traditionnelles.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#EFF6FF;">🔒</div>
+          <h3>Sécurisé & confidentiel</h3>
+          <p>Vos données sont protégées par des protocoles de sécurité avancés. Votre vie privée est notre priorité
+            absolue.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#FEFCE8;">💰</div>
+          <h3>Taux transparents</h3>
+          <p>Aucuns frais cachés. Taux affichés clairement entre 3,5% et 12% par an. Vous savez exactement ce que vous
+            remboursez dès le départ.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#FDF4FF;">📅</div>
+          <h3>Flexibilité totale</h3>
+          <p>Choisissez votre durée de 3 à 24 mois selon votre situation financière. Remboursements adaptés à vos
+            revenus mensuels.</p>
+        </div>
+        <div class="feature-card" style="border:2px solid var(--red);">
+          <div class="feature-icon" style="background:#FFF1ED;border:2px solid var(--red);">🎁</div>
+          <h3 style="color:var(--red);">Promo -20% en cours !</h3>
+          <p>Profitez de notre promotion exclusive : <strong>20% de réduction sur votre remboursement</strong>. Une
+            économie réelle et immédiate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARATIF -->
+  <section>
+    <div class="container">
+      <div class="section-header section-center">
+        <span class="section-label">Comparatif</span>
+        <h2 class="section-title">Flèche Prêt Pro vs les autres solutions</h2>
+        <p class="section-sub">Découvrez pourquoi des milliers d'Ivoiriens choisissent Flèche Prêt Pro plutôt que les
+          alternatives traditionnelles.</p>
+      </div>
+      <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+      <div style="overflow-x:auto;">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Critère</th>
+              <th style="color:var(--red-light);">⚡ Flèche Prêt Pro</th>
+              <th>🏦 Banque traditionnelle</th>
+              <th>🤝 Tontine / Proche</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="comp-highlight">
+              <td>Délai d'obtention</td>
+              <td><strong style="color:var(--green);">Moins de 24h</strong></td>
+              <td>2 à 4 semaines</td>
+              <td>Variable</td>
+            </tr>
+            <tr>
+              <td>100% en ligne</td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="no">✗</span></td>
+              <td><span class="no">✗</span></td>
+            </tr>
+            <tr class="comp-highlight">
+              <td>Dossier simplifié</td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="no">✗</span></td>
+              <td><span class="ok">≈</span></td>
+            </tr>
+            <tr>
+              <td>Disponible 24h/24</td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="no">✗</span></td>
+              <td><span class="no">✗</span></td>
+            </tr>
+            <tr class="comp-highlight">
+              <td>Sans garantie physique</td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="no">✗</span></td>
+              <td><span class="ok">≈</span></td>
+            </tr>
+            <tr>
+              <td>Taux transparent</td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="ok">≈</span></td>
+              <td><span class="no">✗</span></td>
+            </tr>
+            <tr class="comp-highlight">
+              <td>Promo -20% disponible</td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="no">✗</span></td>
+              <td><span class="no">✗</span></td>
+            </tr>
+            <tr>
+              <td>Remboursement flexible</td>
+              <td><span class="yes">✓</span></td>
+              <td><span class="ok">≈</span></td>
+              <td><span class="no">✗</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TARIFS -->
+  <section id="tarifs" class="features-bg">
+    <div class="container">
+      <div class="section-header section-center">
+        <span class="section-label">Offres de prêt</span>
+        <h2 class="section-title">Nos montants disponibles</h2>
+        <p class="section-sub">Des prêts adaptés à tous vos besoins, avec la promotion -20% appliquée sur le
+          remboursement total.</p>
+      </div>
+      <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+      <div class="tarifs-grid">
+        <div class="tarif-card">
+          <div class="tarif-range">Prêt de départ</div>
+          <div class="tarif-amount">30K</div>
+          <div class="tarif-unit">à 150 000 XOF</div>
+          <div class="tarif-rate">Taux : 3,5% – 6% / an</div>
+          <ul
+            style="text-align:left;font-size:13px;color:var(--text-muted);list-style:none;margin-bottom:1.25rem;line-height:2.2;">
+            <li>✅ Durée : 3 à 12 mois</li>
+            <li>✅ Déblocage en 24h</li>
+            <li>✅ Aucun frais caché</li>
+            <li>✅ Eligible à la promo -20%</li>
+            <li>✅ Idéal pour urgences & quotidien</li>
+          </ul>
+          <div class="tarif-promo">🎉 Avec promo : -20% sur remboursement</div>
+        </div>
+        <div class="tarif-card featured">
+          <div class="featured-badge">POPULAIRE</div>
+          <div class="tarif-range">Prêt intermédiaire</div>
+          <div class="tarif-amount">150K</div>
+          <div class="tarif-unit">à 350 000 XOF</div>
+          <div class="tarif-rate">Taux : 6% – 10% / an</div>
+          <ul
+            style="text-align:left;font-size:13px;color:var(--text-muted);list-style:none;margin-bottom:1.25rem;line-height:2.2;">
+            <li>✅ Durée : 6 à 18 mois</li>
+            <li>✅ Déblocage en 24h</li>
+            <li>✅ Aucun frais caché</li>
+            <li>✅ Eligible à la promo -20%</li>
+            <li>✅ Idéal pour commerce & projets</li>
+          </ul>
+          <div class="tarif-promo">🎉 Avec promo : -20% sur remboursement</div>
+        </div>
+        <div class="tarif-card">
+          <div class="tarif-range">Prêt maximum</div>
+          <div class="tarif-amount">350K</div>
+          <div class="tarif-unit">à 500 000 XOF</div>
+          <div class="tarif-rate">Taux : 10% – 12% / an</div>
+          <ul
+            style="text-align:left;font-size:13px;color:var(--text-muted);list-style:none;margin-bottom:1.25rem;line-height:2.2;">
+            <li>✅ Durée : 12 à 24 mois</li>
+            <li>✅ Déblocage en 24h</li>
+            <li>✅ Aucun frais caché</li>
+            <li>✅ Eligible à la promo -20%</li>
+            <li>✅ Idéal pour grands projets</li>
+          </ul>
+          <div class="tarif-promo">🎉 Avec promo : -20% sur remboursement</div>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:1.5rem;font-size:12px;color:var(--text-muted);">* Des frais de retard de
+        0,1%/jour (plafonnés à 18% du principal) peuvent s'appliquer en cas de retard de paiement.</p>
+    </div>
+  </section>
+
+  <!-- ENGAGEMENTS -->
+  <section>
+    <div class="container">
+      <div class="section-header section-center">
+        <span class="section-label">Nos valeurs</span>
+        <h2 class="section-title">Nos engagements envers vous</h2>
+        <p class="section-sub">Flèche Prêt Pro s'engage à vous offrir une expérience financière honnête, rapide et
+          respectueuse.</p>
+      </div>
+      <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+      <div class="engage-grid">
+        <div class="engage-card">
+          <div class="engage-num">01</div>
+          <h3>Rapidité</h3>
+          <p>Nous nous engageons à traiter votre demande et à débloquer vos fonds en moins de 24 heures après
+            validation.</p>
+        </div>
+        <div class="engage-card">
+          <div class="engage-num">02</div>
+          <h3>Transparence totale</h3>
+          <p>Tous les taux, frais et conditions vous sont communiqués avant toute signature. Zéro surprise, zéro frais
+            cachés.</p>
+        </div>
+        <div class="engage-card">
+          <div class="engage-num">03</div>
+          <h3>Confidentialité</h3>
+          <p>Vos données personnelles et financières ne sont jamais partagées avec des tiers sans votre consentement
+            explicite.</p>
+        </div>
+        <div class="engage-card">
+          <div class="engage-num">04</div>
+          <h3>Accessibilité</h3>
+          <p>Notre service est disponible 24h/24 et 7j/7 depuis votre smartphone, partout où vous vous trouvez en
+            Afrique de l'Ouest.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="features-bg">
+    <div class="container">
+      <div class="section-header section-center">
+        <span class="section-label">Notre parcours</span>
+        <h2 class="section-title">L'histoire de Flèche Prêt Pro</h2>
+        <p class="section-sub">Une société née d'un constat simple : les Africains méritent un accès rapide et facile au
+          crédit.</p>
+      </div>
+      <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot">🌱</div>
+          <div class="tl-content">
+            <div class="tl-year">Fondation</div>
+            <h4>Naissance de l'idée</h4>
+            <p>Face au manque d'accès au crédit pour les populations non bancarisées d'Afrique de l'Ouest, l'idée d'une
+              plateforme de micro-crédit mobile 100% digitale est lancée.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">📱</div>
+          <div class="tl-content">
+            <div class="tl-year">Développement</div>
+            <h4>Création de l'application</h4>
+            <p>L'équipe technique développe l'application Flèche Prêt Pro, conçue pour être simple, intuitive et
+              accessible à tous, même avec une connexion lente.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">🚀</div>
+          <div class="tl-content">
+            <div class="tl-year">Lancement 2025</div>
+            <h4>Mise en service officielle</h4>
+            <p>Flèche Prêt Pro est officiellement lancé sur le Google Play Store et accueille ses premiers clients en
+              Côte d'Ivoire avec des prêts de 30 000 à 500 000 XOF.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">📈</div>
+          <div class="tl-content">
+            <div class="tl-year">Croissance rapide</div>
+            <h4>100 000+ utilisateurs</h4>
+            <p>En quelques mois, Flèche Prêt Pro dépasse les 100 000 utilisateurs actifs et décaisse des centaines de
+              millions de XOF pour aider les Ivoiriens à financer leurs projets.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">🎁</div>
+          <div class="tl-content">
+            <div class="tl-year">Aujourd'hui</div>
+            <h4>Promotion -20% pour nos clients</h4>
+            <p>Pour remercier nos clients fidèles et accueillir de nouveaux utilisateurs, Flèche Prêt Pro lance une
+              promotion exceptionnelle de 20% de réduction sur les remboursements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMOIGNAGES -->
+  <section id="temoignages">
+    <div class="container">
+      <div class="section-header section-center">
+        <span class="section-label">Avis clients</span>
+        <h2 class="section-title">Ce que disent nos clients</h2>
+        <p class="section-sub">Des milliers d'Ivoiriens font confiance à Flèche Prêt Pro pour gérer leurs besoins
+          financiers au quotidien.</p>
+      </div>
+      <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">J'avais une urgence médicale pour ma mère et j'avais besoin de 120 000 XOF rapidement.
+            En moins de 3 heures, l'argent était sur mon mobile money. Vraiment impressionnant, merci Flèche Prêt Pro !
           </p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#E53E1E,#F97316);">AK</div>
+            <div>
+              <div class="testi-name">Adjoua Kouassi</div>
+              <div class="testi-city">Abidjan, Cocody</div>
+              <div class="testi-badge">Client vérifié</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">Je suis commerçante au marché d'Adjamé. Grâce à Flèche Prêt Pro, j'ai pu renouveler mon
+            stock pour la fête de fin d'année. Le processus est simple et l'argent est arrivé le lendemain matin !</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#7C3AED,#DB2777);">MB</div>
+            <div>
+              <div class="testi-name">Marie-Claire Bamba</div>
+              <div class="testi-city">Abidjan, Adjamé</div>
+              <div class="testi-badge">Client vérifié</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★☆</div>
+          <p class="testi-text">Avec la promo de -20%, j'ai économisé plus de 30 000 XOF sur mon remboursement. C'est
+            une vraie économie pour moi. Je recommande cette application à tous mes collègues fonctionnaires.</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#0EA5E9,#10B981);">KD</div>
+            <div>
+              <div class="testi-name">Koffi Diomandé</div>
+              <div class="testi-city">Yamoussoukro</div>
+              <div class="testi-badge">Client vérifié</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">Avant, j'allais à la tontine ou je demandais à des proches. Maintenant avec Flèche Prêt
+            Pro, je suis autonome financièrement. L'application est facile à utiliser même pour quelqu'un comme moi peu
+            habitué à la technologie.</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#F59E0B,#EF4444);">YT</div>
+            <div>
+              <div class="testi-name">Yao Tanoh</div>
+              <div class="testi-city">Bouaké</div>
+              <div class="testi-badge">Client vérifié</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">J'ai payé la scolarité de mes enfants grâce à un prêt de 200 000 XOF. La réponse était
+            rapide, les termes clairs et le remboursement étalé sur 12 mois s'adapte parfaitement à mon salaire.</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#10B981,#3B82F6);">FA</div>
+            <div>
+              <div class="testi-name">Fatou Abidjan</div>
+              <div class="testi-city">San Pedro</div>
+              <div class="testi-badge">Client vérifié</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">Service client très réactif, processus simple et transparent. J'ai eu mon prêt sans
+            aucun tracas administratif. La promo -20% c'est du bonus ! Je vais certainement renouveler ma demande
+            bientôt.</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#6366F1,#EC4899);">IC</div>
+            <div>
+              <div class="testi-name">Ismaël Coulibaly</div>
+              <div class="testi-city">Abidjan, Yopougon</div>
+              <div class="testi-badge">Client vérifié</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="text-align:center;margin-top:2rem;padding:1.25rem;background:var(--gray-light);border-radius:12px;max-width:400px;margin-left:auto;margin-right:auto;">
+        <div style="font-size:2.5rem;font-weight:800;font-family:'Sora',sans-serif;color:var(--gold);">4.7 / 5</div>
+        <div style="color:var(--gold);font-size:1.2rem;margin:4px 0;">★★★★★</div>
+        <div style="font-size:13px;color:var(--text-muted);">Basé sur +1 200 avis clients vérifiés</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELIGIBILITE -->
+  <section class="eligib-bg" style="padding:4rem 2rem;">
+    <div class="container">
+      <div class="section-header section-center" style="color:white;">
+        <span class="section-label" style="color:var(--red-light);">Critères d'accès</span>
+        <h2 class="section-title" style="color:white;">Êtes-vous éligible ?</h2>
+        <p class="section-sub" style="color:rgba(255,255,255,0.65);margin:0 auto;">Vérifiez que vous remplissez les
+          conditions pour accéder à un prêt Flèche Prêt Pro.</p>
+      </div>
+      <div style="margin-bottom:3rem;"></div>
+      <div class="eligib-grid">
+        <div class="eligib-card">
+          <div class="eligib-icon">🎂</div>
+          <h3>Âge requis</h3>
+          <p>Avoir entre 20 et 65 ans au moment de la demande de prêt</p>
+        </div>
+        <div class="eligib-card">
+          <div class="eligib-icon">🏠</div>
+          <h3>Résident légal</h3>
+          <p>Être résident légal avec une pièce d'identité nationale valide</p>
+        </div>
+        <div class="eligib-card">
+          <div class="eligib-icon">💼</div>
+          <h3>Revenu fixe</h3>
+          <p>Disposer d'un revenu fixe régulier (salarié, commerçant, fonctionnaire…)</p>
+        </div>
+        <div class="eligib-card">
+          <div class="eligib-icon">📱</div>
+          <h3>Smartphone Android</h3>
+          <p>Posséder un smartphone Android pour installer et utiliser l'application</p>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- SECURITE -->
+  <section>
+    <div class="container">
+      <div class="section-header section-center">
+        <span class="section-label">Sécurité & confidentialité</span>
+        <h2 class="section-title">Vos données sont en sécurité</h2>
+        <p class="section-sub">Flèche Prêt Pro met en place les meilleures pratiques de sécurité pour protéger vos
+          informations personnelles et financières.</p>
+      </div>
+      <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+      <div class="secu-grid">
+        <div class="secu-card">
+          <div class="secu-icon-wrap" style="background:#EFF6FF;">🔐</div>
+          <h3>Chiffrement des données</h3>
+          <p>Toutes vos informations sont chiffrées avec les protocoles de sécurité les plus récents. Aucune donnée
+            n'est transmise en clair sur le réseau.</p>
+        </div>
+        <div class="secu-card">
+          <div class="secu-icon-wrap" style="background:#F0FDF4;">🛡️</div>
+          <h3>Vérification d'identité</h3>
+          <p>Notre processus de vérification d'identité (KYC) garantit que seuls les utilisateurs légitimes accèdent à
+            nos services de prêt.</p>
+        </div>
+        <div class="secu-card">
+          <div class="secu-icon-wrap" style="background:#FFF1ED;">👁️</div>
+          <h3>Pas de partage tiers</h3>
+          <p>Vos données personnelles ne sont jamais vendues ou partagées avec des tiers à des fins publicitaires ou
+            commerciales.</p>
+        </div>
+        <div class="secu-card">
+          <div class="secu-icon-wrap" style="background:#FEFCE8;">📋</div>
+          <h3>Conformité réglementaire</h3>
+          <p>Flèche Prêt Pro s'engage à respecter les réglementations locales sur la protection des données personnelles
+            en vigueur en Côte d'Ivoire.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSCRIPTION -->
+  <section id="inscription" class="features-bg">
+    <div class="container">
+      <div class="inscription-grid">
+        <div>
+          <span class="section-label">Inscription</span>
+          <h2 class="section-title">Comment s'inscrire sur Flèche Prêt Pro ?</h2>
+          <p style="color:var(--text-muted);margin-bottom:2rem;font-size:14px;">Créez votre compte en quelques étapes
+            simples et commencez à accéder aux prêts dont vous avez besoin — avec la promo -20% active !</p>
+          <div class="inscription-steps">
+            <div class="insc-step">
+              <div class="insc-dot">1</div>
+              <div class="insc-content">
+                <h4>Téléchargez l'app sur Play Store</h4>
+                <p>Recherchez "Flèche Prêt Pro" sur le Google Play Store et installez gratuitement.</p>
+              </div>
+            </div>
+            <div class="insc-step">
+              <div class="insc-dot">2</div>
+              <div class="insc-content">
+                <h4>Entrez votre numéro de téléphone</h4>
+                <p>Inscrivez-vous avec votre propre numéro. Un code de vérification SMS vous sera envoyé.</p>
+              </div>
+            </div>
+            <div class="insc-step">
+              <div class="insc-dot">3</div>
+              <div class="insc-content">
+                <h4>Complétez votre profil</h4>
+                <p>Renseignez votre identité, situation professionnelle et revenus mensuels.</p>
+              </div>
+            </div>
+            <div class="insc-step">
+              <div class="insc-dot">4</div>
+              <div class="insc-content">
+                <h4>Soumettez votre demande de prêt</h4>
+                <p>Choisissez le montant et la durée de remboursement, puis soumettez votre dossier.</p>
+              </div>
+            </div>
+            <div class="insc-step">
+              <div class="insc-dot">5</div>
+              <div class="insc-content">
+                <h4>Recevez vos fonds + promo -20%</h4>
+                <p>Après approbation, fonds sur votre Mobile Money en moins de 24h. La réduction -20% est
+                  automatiquement appliquée pendant la promo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="app-card">
+          <div class="app-icon-big">⚡</div>
+          <h3>Flèche Prêt Pro</h3>
+          <p>Disponible gratuitement sur Android. Téléchargez maintenant et profitez de la promotion -20% sur vos
+            remboursements !</p>
+          <a href="#" class="store-btn">▶ Google Play Store</a>
+          <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.1);">
+            <p style="font-size:12px;color:rgba(255,255,255,0.5);line-height:2;">
+              📧 flechepretpro@flechepretpro.com<br>
+              📍 Abidjan — Lun–Sam, 8h30 à 17h00<br>
+              🌍 Service disponible en Côte d'Ivoire
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTENAIRES -->
+  <div class="partners-strip">
+    <div class="partners-label">Paiements acceptés & partenaires</div>
+    <div class="partners-logos">
+      <div class="partner-logo">📱 Orange Money</div>
+      <div class="partner-logo">💛 MTN MoMo</div>
+      <div class="partner-logo">💙 Wave</div>
+      <div class="partner-logo">🏦 Virement Bancaire</div>
+      <div class="partner-logo">💰 Moov Money</div>
+    </div>
   </div>
-</section>
 
-<!-- PARTENAIRES -->
-<div class="partners-strip">
-  <div class="partners-label">Paiements acceptés & partenaires</div>
-  <div class="partners-logos">
-    <div class="partner-logo">📱 Orange Money</div>
-    <div class="partner-logo">💛 MTN MoMo</div>
-    <div class="partner-logo">💙 Wave</div>
-    <div class="partner-logo">🏦 Virement Bancaire</div>
-    <div class="partner-logo">💰 Moov Money</div>
-  </div>
-</div>
-
-<!-- FAQ -->
-<section id="faq">
-  <div class="container">
-    <div class="section-header section-center">
-      <span class="section-label">FAQ</span>
-      <h2 class="section-title">Questions fréquentes</h2>
-      <p class="section-sub">Tout ce que vous devez savoir sur Flèche Prêt Pro et la promotion en cours.</p>
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-header section-center">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Questions fréquentes</h2>
+        <p class="section-sub">Tout ce que vous devez savoir sur Flèche Prêt Pro et la promotion en cours.</p>
+      </div>
+      <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">En quoi consiste la promotion de -20% ?<div class="faq-toggle">+
+            </div>
+          </div>
+          <div class="faq-a">Pendant la durée de la promotion, Flèche Prêt Pro applique une réduction de 20% sur le
+            montant total de votre remboursement. Concrètement, si vous deviez rembourser 100 000 XOF, vous ne paierez
+            que 80 000 XOF. Cette offre est valable pour les nouveaux prêts soumis pendant la période promotionnelle et
+            les clients existants qui renouvellent leur prêt.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Combien de temps faut-il pour recevoir son prêt ?<div
+              class="faq-toggle">+</div>
+          </div>
+          <div class="faq-a">Après validation et approbation de votre dossier, les fonds sont débloqués en moins de 24
+            heures. Le processus d'analyse peut prendre quelques heures selon le volume de demandes. Dans la majorité
+            des cas, nos clients reçoivent leur argent dans les 3 à 6 heures suivant l'approbation.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Quels documents sont nécessaires pour faire une demande ?<div
+              class="faq-toggle">+</div>
+          </div>
+          <div class="faq-a">Vous aurez besoin de votre pièce d'identité valide (CNI, passeport ou titre de séjour),
+            d'un justificatif de revenu (fiche de paie, relevé de compte ou déclaration de revenu pour les commerçants)
+            et de votre numéro de téléphone actif. Tout se passe directement dans l'application, sans déplacement
+            physique.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Quels sont les frais en cas de retard de paiement ?<div
+              class="faq-toggle">+</div>
+          </div>
+          <div class="faq-a">Des frais de retard de 0,1% par jour peuvent être appliqués sur le montant impayé,
+            plafonnés à 18% du principal impayé. Nous recommandons vivement de respecter les échéances de remboursement.
+            En cas de difficultés, contactez notre support avant l'échéance pour trouver une solution amiable.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Puis-je rembourser mon prêt de façon anticipée ?<div
+              class="faq-toggle">+</div>
+          </div>
+          <div class="faq-a">Oui, le remboursement anticipé est possible et encouragé. Vous pouvez procéder depuis
+            l'application à tout moment. Contactez notre équipe support par email pour obtenir le montant exact dû lors
+            d'un remboursement anticipé, qui peut vous faire économiser des intérêts restants.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Comment contacter le service client ?<div class="faq-toggle">+
+            </div>
+          </div>
+          <div class="faq-a">Notre équipe est disponible du lundi au samedi de 8h30 à 17h00 (heure d'Abidjan). Vous
+            pouvez nous contacter par email à flechepretpro@flechepretpro.com ou via le chat support intégré dans
+            l'application. Nous répondons généralement dans un délai de 2 heures ouvrables.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Mon refus de prêt est-il définitif ?<div class="faq-toggle">+
+            </div>
+          </div>
+          <div class="faq-a">Non, un refus n'est pas définitif. Si votre demande est refusée, vous pouvez représenter un
+            dossier après amélioration de votre profil (augmentation de revenu, remboursement de dettes existantes,
+            etc.). Vous pouvez généralement soumettre une nouvelle demande après 30 jours.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Sur quels modes de paiement puis-je recevoir mon prêt ?<div
+              class="faq-toggle">+</div>
+          </div>
+          <div class="faq-a">Les fonds peuvent être versés sur Orange Money, MTN Mobile Money, Wave, Moov Money ou par
+            virement bancaire direct selon votre préférence. Vous choisissez votre mode de réception lors de la demande
+            de prêt dans l'application.</div>
+        </div>
+      </div>
     </div>
-    <div class="divider"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">En quoi consiste la promotion de -20% ?<div class="faq-toggle">+</div></div>
-        <div class="faq-a">Pendant la durée de la promotion, Flèche Prêt Pro applique une réduction de 20% sur le montant total de votre remboursement. Concrètement, si vous deviez rembourser 100 000 XOF, vous ne paierez que 80 000 XOF. Cette offre est valable pour les nouveaux prêts soumis pendant la période promotionnelle et les clients existants qui renouvellent leur prêt.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Combien de temps faut-il pour recevoir son prêt ?<div class="faq-toggle">+</div></div>
-        <div class="faq-a">Après validation et approbation de votre dossier, les fonds sont débloqués en moins de 24 heures. Le processus d'analyse peut prendre quelques heures selon le volume de demandes. Dans la majorité des cas, nos clients reçoivent leur argent dans les 3 à 6 heures suivant l'approbation.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Quels documents sont nécessaires pour faire une demande ?<div class="faq-toggle">+</div></div>
-        <div class="faq-a">Vous aurez besoin de votre pièce d'identité valide (CNI, passeport ou titre de séjour), d'un justificatif de revenu (fiche de paie, relevé de compte ou déclaration de revenu pour les commerçants) et de votre numéro de téléphone actif. Tout se passe directement dans l'application, sans déplacement physique.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Quels sont les frais en cas de retard de paiement ?<div class="faq-toggle">+</div></div>
-        <div class="faq-a">Des frais de retard de 0,1% par jour peuvent être appliqués sur le montant impayé, plafonnés à 18% du principal impayé. Nous recommandons vivement de respecter les échéances de remboursement. En cas de difficultés, contactez notre support avant l'échéance pour trouver une solution amiable.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Puis-je rembourser mon prêt de façon anticipée ?<div class="faq-toggle">+</div></div>
-        <div class="faq-a">Oui, le remboursement anticipé est possible et encouragé. Vous pouvez procéder depuis l'application à tout moment. Contactez notre équipe support par email pour obtenir le montant exact dû lors d'un remboursement anticipé, qui peut vous faire économiser des intérêts restants.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Comment contacter le service client ?<div class="faq-toggle">+</div></div>
-        <div class="faq-a">Notre équipe est disponible du lundi au samedi de 8h30 à 17h00 (heure d'Abidjan). Vous pouvez nous contacter par email à flechepretpro@flechepretpro.com ou via le chat support intégré dans l'application. Nous répondons généralement dans un délai de 2 heures ouvrables.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Mon refus de prêt est-il définitif ?<div class="faq-toggle">+</div></div>
-        <div class="faq-a">Non, un refus n'est pas définitif. Si votre demande est refusée, vous pouvez représenter un dossier après amélioration de votre profil (augmentation de revenu, remboursement de dettes existantes, etc.). Vous pouvez généralement soumettre une nouvelle demande après 30 jours.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Sur quels modes de paiement puis-je recevoir mon prêt ?<div class="faq-toggle">+</div></div>
-        <div class="faq-a">Les fonds peuvent être versés sur Orange Money, MTN Mobile Money, Wave, Moov Money ou par virement bancaire direct selon votre préférence. Vous choisissez votre mode de réception lors de la demande de prêt dans l'application.</div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ne laissez pas passer cette opportunité !</h2>
+      <p>La promotion -20% sur vos remboursements est limitée dans le temps. Des milliers d'Ivoiriens en profitent déjà.
+        Rejoignez-les maintenant !</p>
+      <a href="#inscription" class="btn-primary" style="font-size:1.1rem;padding:16px 40px;display:inline-flex;">🚀
+        Demander mon prêt maintenant</a>
+      <div style="margin-top:2rem;opacity:0.7;font-size:13px;">
+        ✅ Sans frais cachés &nbsp;•&nbsp; ✅ Réponse rapide &nbsp;•&nbsp; ✅ -20% garanti pendant la promo
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA FINAL -->
-<section class="cta-section">
-  <div class="container">
-    <h2>Ne laissez pas passer cette opportunité !</h2>
-    <p>La promotion -20% sur vos remboursements est limitée dans le temps. Des milliers d'Ivoiriens en profitent déjà. Rejoignez-les maintenant !</p>
-    <a href="#inscription" class="btn-primary" style="font-size:1.1rem;padding:16px 40px;display:inline-flex;">🚀 Demander mon prêt maintenant</a>
-    <div style="margin-top:2rem;opacity:0.7;font-size:13px;">
-      ✅ Sans frais cachés &nbsp;•&nbsp; ✅ Réponse rapide &nbsp;•&nbsp; ✅ -20% garanti pendant la promo
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Flèche <span>Prêt Pro</span></h3>
+        <p>Votre solution de micro-crédit mobile en Afrique de l'Ouest. Rapide, transparent et accessible à tous.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#fonctionnement">Comment ça marche</a></li>
+          <li><a href="#simulateur">Simulateur de prêt</a></li>
+          <li><a href="#tarifs">Nos offres</a></li>
+          <li><a href="#temoignages">Avis clients</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Nos prêts</h4>
+        <ul>
+          <li><a href="#tarifs">Prêt 30K – 150K XOF</a></li>
+          <li><a href="#tarifs">Prêt 150K – 350K XOF</a></li>
+          <li><a href="#tarifs">Prêt 350K – 500K XOF</a></li>
+          <li><a href="#simulateur">Calculer mon prêt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:flechepretpro@flechepretpro.com">📧 flechepretpro@flechepretpro.com</a></li>
+          <li><a href="#">📍 Abidjan, Côte d'Ivoire</a></li>
+          <li><a href="#">🕐 Lun–Sam, 8h30–17h00</a></li>
+          <li><a href="#">📱 Application Android</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <h3>Flèche <span>Prêt Pro</span></h3>
-      <p>Votre solution de micro-crédit mobile en Afrique de l'Ouest. Rapide, transparent et accessible à tous.</p>
+    <div class="footer-bottom">
+      <p>© 2025 Flèche Prêt Pro. Tous droits réservés. &nbsp;|&nbsp; Montants en XOF (Franc CFA Ouest-Africain).</p>
+      <p style="margin-top:4px;">Des frais de retard de 0,1%/jour (max 18% du principal) peuvent s'appliquer en cas de
+        retard.</p>
     </div>
-    <div class="footer-col">
-      <h4>Navigation</h4>
-      <ul>
-        <li><a href="#fonctionnement">Comment ça marche</a></li>
-        <li><a href="#simulateur">Simulateur de prêt</a></li>
-        <li><a href="#tarifs">Nos offres</a></li>
-        <li><a href="#temoignages">Avis clients</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Nos prêts</h4>
-      <ul>
-        <li><a href="#tarifs">Prêt 30K – 150K XOF</a></li>
-        <li><a href="#tarifs">Prêt 150K – 350K XOF</a></li>
-        <li><a href="#tarifs">Prêt 350K – 500K XOF</a></li>
-        <li><a href="#simulateur">Calculer mon prêt</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:flechepretpro@flechepretpro.com">📧 flechepretpro@flechepretpro.com</a></li>
-        <li><a href="#">📍 Abidjan, Côte d'Ivoire</a></li>
-        <li><a href="#">🕐 Lun–Sam, 8h30–17h00</a></li>
-        <li><a href="#">📱 Application Android</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2025 Flèche Prêt Pro. Tous droits réservés. &nbsp;|&nbsp; Montants en XOF (Franc CFA Ouest-Africain).</p>
-    <p style="margin-top:4px;">Des frais de retard de 0,1%/jour (max 18% du principal) peuvent s'appliquer en cas de retard.</p>
-  </div>
-</footer>
+  </footer>
 
-<script>
-// COUNTDOWN — date cible dans 7 jours
-const target = new Date();
-target.setDate(target.getDate() + 7);
-function updateCountdown() {
-  const now = new Date();
-  const diff = target - now;
-  if (diff <= 0) { document.querySelector('.countdown-section').style.display='none'; return; }
-  const d = Math.floor(diff / 86400000);
-  const h = Math.floor((diff % 86400000) / 3600000);
-  const m = Math.floor((diff % 3600000) / 60000);
-  const s = Math.floor((diff % 60000) / 1000);
-  document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
-  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
-  document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
-  document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
-}
-setInterval(updateCountdown, 1000);
-updateCountdown();
+  <script>
+    // COUNTDOWN — date cible dans 7 jours
+    const target = new Date();
+    target.setDate(target.getDate() + 7);
+    function updateCountdown() {
+      const now = new Date();
+      const diff = target - now;
+      if (diff <= 0) { document.querySelector('.countdown-section').style.display = 'none'; return; }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('cd-days').textContent = String(d).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
+      document.getElementById('cd-mins').textContent = String(m).padStart(2, '0');
+      document.getElementById('cd-secs').textContent = String(s).padStart(2, '0');
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
 
-// LIVE COUNTERS — animation progressive
-function animCount(el, start, end, duration, suffix='') {
-  let startTime = null;
-  function step(timestamp) {
-    if (!startTime) startTime = timestamp;
-    const progress = Math.min((timestamp - startTime) / duration, 1);
-    const value = Math.floor(progress * (end - start) + start);
-    el.textContent = value.toLocaleString('fr-FR') + suffix;
-    if (progress < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-setTimeout(() => {
-  animCount(document.getElementById('lc-loans'), 1100, 1247, 2000);
-  animCount(document.getElementById('lc-amount'), 150000000, 187450000, 2500);
-  animCount(document.getElementById('lc-users'), 95000, 103294, 2000);
-}, 500);
-// Increment loans counter every 30s
-setInterval(() => {
-  const el = document.getElementById('lc-loans');
-  const v = parseInt(el.textContent.replace(/\s/g,'')) + Math.floor(Math.random()*3+1);
-  el.textContent = v.toLocaleString('fr-FR');
-}, 30000);
+    // LIVE COUNTERS — animation progressive
+    function animCount(el, start, end, duration, suffix = '') {
+      let startTime = null;
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        const value = Math.floor(progress * (end - start) + start);
+        el.textContent = value.toLocaleString('fr-FR') + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    setTimeout(() => {
+      animCount(document.getElementById('lc-loans'), 1100, 1247, 2000);
+      animCount(document.getElementById('lc-amount'), 150000000, 187450000, 2500);
+      animCount(document.getElementById('lc-users'), 95000, 103294, 2000);
+    }, 500);
+    // Increment loans counter every 30s
+    setInterval(() => {
+      const el = document.getElementById('lc-loans');
+      const v = parseInt(el.textContent.replace(/\s/g, '')) + Math.floor(Math.random() * 3 + 1);
+      el.textContent = v.toLocaleString('fr-FR');
+    }, 30000);
 
-// SIMULATEUR
-function calcSim() {
-  const amount = parseFloat(document.getElementById('simAmount').value) || 0;
-  const months = parseInt(document.getElementById('simDuration').value);
-  const rate = parseFloat(document.getElementById('simRate').value) / 100;
-  const interest = amount * rate * (months / 12);
-  const total = Math.round(amount + interest);
-  const withPromo = Math.round(total * 0.80);
-  const economy = total - withPromo;
-  document.getElementById('simBefore').textContent = total.toLocaleString('fr-FR') + ' XOF';
-  document.getElementById('simAfter').textContent = withPromo.toLocaleString('fr-FR') + ' XOF';
-  document.getElementById('simEconomy').textContent = economy.toLocaleString('fr-FR');
-}
-calcSim();
+    // SIMULATEUR
+    function calcSim() {
+      const amount = parseFloat(document.getElementById('simAmount').value) || 0;
+      const months = parseInt(document.getElementById('simDuration').value);
+      const rate = parseFloat(document.getElementById('simRate').value) / 100;
+      const interest = amount * rate * (months / 12);
+      const total = Math.round(amount + interest);
+      const withPromo = Math.round(total * 0.80);
+      const economy = total - withPromo;
+      document.getElementById('simBefore').textContent = total.toLocaleString('fr-FR') + ' XOF';
+      document.getElementById('simAfter').textContent = withPromo.toLocaleString('fr-FR') + ' XOF';
+      document.getElementById('simEconomy').textContent = economy.toLocaleString('fr-FR');
+    }
+    calcSim();
 
-// FAQ TOGGLE
-function toggleFaq(el) {
-  const item = el.parentElement;
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i => {
-    i.classList.remove('open');
-    i.querySelector('.faq-toggle').textContent = '+';
-  });
-  if (!isOpen) {
-    item.classList.add('open');
-    el.querySelector('.faq-toggle').textContent = '−';
-  }
-}
+    // FAQ TOGGLE
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-toggle').textContent = '+';
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        el.querySelector('.faq-toggle').textContent = '−';
+      }
+    }
 
-// STICKY CTA
-window.addEventListener('scroll', () => {
-  const sticky = document.getElementById('stickyCta');
-  if (window.scrollY > 600) sticky.classList.add('visible');
-  else sticky.classList.remove('visible');
-});
+    // STICKY CTA
+    window.addEventListener('scroll', () => {
+      const sticky = document.getElementById('stickyCta');
+      if (window.scrollY > 600) sticky.classList.add('visible');
+      else sticky.classList.remove('visible');
+    });
 
-// SMOOTH SCROLL
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-  });
-});
-</script>
+    // SMOOTH SCROLL
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+  </script>
 </body>
+
 </html>
